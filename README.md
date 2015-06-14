@@ -1,6 +1,6 @@
 # react-native-search-bar
 
-The high-quality [IOS native search bar](https://developer.apple.com/library/ios/documentation/UserExperience/Conceptual/UIKitUICatalog/UISearchBar.html) for react native.
+The high-quality [iOS native search bar](https://developer.apple.com/library/ios/documentation/UserExperience/Conceptual/UIKitUICatalog/UISearchBar.html) for react native.
 
 <img src="SearchBar.png"/>
 
