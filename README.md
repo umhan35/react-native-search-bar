@@ -1,6 +1,6 @@
 # react-native-search-bar
 
-The native search bar for react native.
+The high-quality [IOS native search bar](https://developer.apple.com/library/ios/documentation/UserExperience/Conceptual/UIKitUICatalog/UISearchBar.html) for react native.
 
 <img src="SearchBar.png"/>
 
@@ -8,7 +8,7 @@ The native search bar for react native.
 
 In your react native project, run `npm install react-native-search-bar --save`
 
-To link this library, please follow the [Linking Libraries](http://facebook.github.io/react-native/docs/linking-libraries.html) guide on React Native docs.
+To link this library, please follow the [Linking Libraries](http://facebook.github.io/react-native/docs/linking-libraries.html) guide on React Native website.
 
 ## Usage
 
