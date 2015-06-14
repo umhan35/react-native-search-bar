@@ -23,7 +23,7 @@ To link this library, please follow the [Linking Libraries](http://facebook.gith
 
 ## Contribution
 
-For now, implemented are only some of the features of [UISearchBar](https://developer.apple.com/library/ios/documentation/UIKit/Reference/UISearchBar_Class/)).
+For now, implemented are only some of the features of [UISearchBar](https://developer.apple.com/library/ios/documentation/UIKit/Reference/UISearchBar_Class/).
 Feel free to send a pull request.
 
 ## License
