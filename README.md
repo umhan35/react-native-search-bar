@@ -21,6 +21,8 @@ To link this library, please follow the [Linking Libraries](http://facebook.gith
 	/>
 ```
 
+There is also a example project in located in the [SearchBarExample](SearchBarExample) directory.
+
 ## Contribution
 
 For now, implemented are only some of the features of [UISearchBar](https://developer.apple.com/library/ios/documentation/UIKit/Reference/UISearchBar_Class/).
