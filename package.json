@@ -1,6 +1,6 @@
 {
   "name": "react-native-search-bar",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "The native search bar for react native.",
   "keywords": [
     "search-bar",
@@ -9,7 +9,7 @@
     "ios"
   ],
   "dependencies": {
-    "react-native": "^0.3.1"
+    "react-native": "^0.5.0"
   },
   "repository": {
     "type": "git",
