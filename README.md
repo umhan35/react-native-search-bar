@@ -15,7 +15,7 @@ To link this library, please follow the first two steps in the [Linking Librarie
 In your react native project, run
 
 ```Bash
-npm install react-native@latest --save # optional, just for latest react-native
+npm install react-native@latest --save # optional, just for the latest react-native
 npm install react-native-search-bar@latest --save
 ```
 
@@ -30,7 +30,7 @@ npm install react-native-search-bar@latest --save
 	/>
 ```
 
-There is also a example project in located in the [SearchBarExample](SearchBarExample) directory.
+There is also a example project in the [SearchBarExample](SearchBarExample) directory.
 
 ## Contribution
 
