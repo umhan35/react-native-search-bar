@@ -30,7 +30,7 @@ npm install react-native-search-bar@latest --save
 	/>
 ```
 
-There is also a example project in the [SearchBarExample](SearchBarExample) directory.
+There is also an example project in the [SearchBarExample](SearchBarExample) directory.
 
 ## Contribution
 
