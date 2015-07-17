@@ -17,6 +17,13 @@ RCT_EXPORT_MODULE()
 
 RCT_EXPORT_VIEW_PROPERTY(placeholder, NSString)
 RCT_EXPORT_VIEW_PROPERTY(showsCancelButton, BOOL)
+RCT_CUSTOM_VIEW_PROPERTY(hideBackground, BOOL, RNSearchBar)
+{
+    if ([RCTConvert BOOL:json]) {
+        view.backgroundImage = [[UIImage alloc] init];
+        view.backgroundColor = [UIColor clearColor];
+    }
+}
 
 - (NSDictionary *)constantsToExport
 {
