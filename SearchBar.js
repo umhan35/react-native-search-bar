@@ -47,5 +47,3 @@ SearchBar = React.createClass({
 });
 
 module.exports = SearchBar;
-
-//# sourceMappingURL=SearchBar.js.map
