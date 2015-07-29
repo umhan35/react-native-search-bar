@@ -11,6 +11,7 @@ NativeModules = React.NativeModules;
 SearchBar = React.createClass({
   propTypes: {
     placeholder: PropTypes.string,
+    text: PropTypes.string,
     tintColor: PropTypes.string,
     showsCancelButton: PropTypes.bool,
     onChange: PropTypes.func,
