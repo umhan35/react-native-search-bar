@@ -10,6 +10,7 @@
 @implementation RNSearchBar
 {
   RCTEventDispatcher *_eventDispatcher;
+  NSInteger _nativeEventCount;
 }
 
 - (instancetype)initWithEventDispatcher:(RCTEventDispatcher *)eventDispatcher
@@ -25,17 +26,22 @@
 - (void)searchBarTextDidBeginEditing:(UISearchBar *)searchBar
 {
   [self setShowsCancelButton:YES animated:YES];
-  
+    
+    
   [_eventDispatcher sendTextEventWithType:RCTTextEventTypeFocus
                                  reactTag:self.reactTag
-                                     text:searchBar.text];
+                                     text:searchBar.text
+                            eventCount:_nativeEventCount];
 }
 
 - (void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText
 {
+    _nativeEventCount++;
+    
   [_eventDispatcher sendTextEventWithType:RCTTextEventTypeChange
                                  reactTag:self.reactTag
-                                     text:searchText];
+                                     text:searchText
+                               eventCount:_nativeEventCount];
 }
 
 - (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar
