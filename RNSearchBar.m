@@ -52,7 +52,7 @@
                           @"searchText": searchBar.text
                           };
   
-  [_eventDispatcher sendInputEventWithName:@"topTap" body:event];
+  [_eventDispatcher sendInputEventWithName:@"press" body:event];
 }
 
 
