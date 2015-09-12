@@ -13,6 +13,7 @@ var SearchBarExample = React.createClass({
     return (
       <SearchBar
         placeholder='Search'
+        textFieldBackgroundColor='blue'
         />
     );
   }
