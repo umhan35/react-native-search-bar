@@ -26,8 +26,8 @@
 - (void)searchBarTextDidBeginEditing:(UISearchBar *)searchBar
 {
   [self setShowsCancelButton:YES animated:YES];
-    
-    
+
+
   [_eventDispatcher sendTextEventWithType:RCTTextEventTypeFocus
                                  reactTag:self.reactTag
                                      text:searchBar.text
@@ -37,7 +37,7 @@
 - (void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText
 {
     _nativeEventCount++;
-    
+
   [_eventDispatcher sendTextEventWithType:RCTTextEventTypeChange
                                  reactTag:self.reactTag
                                      text:searchText
@@ -51,8 +51,8 @@
                           @"button": @"search",
                           @"searchText": searchBar.text
                           };
-  
-  [_eventDispatcher sendInputEventWithName:@"topTap" body:event];
+
+  [_eventDispatcher sendInputEventWithName:@"press" body:event];
 }
 
 
@@ -61,13 +61,13 @@
   self.text = @"";
   [self resignFirstResponder];
   [self setShowsCancelButton:NO animated:YES];
-  
+
   NSDictionary *event = @{
                           @"target": self.reactTag,
                           @"button": @"cancel"
                           };
-  
-  [_eventDispatcher sendInputEventWithName:@"topTap" body:event];
+
+  [_eventDispatcher sendInputEventWithName:@"press" body:event];
 }
 
 
