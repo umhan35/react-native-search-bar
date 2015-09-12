@@ -6,7 +6,7 @@
     "start": "node_modules/react-native/packager/packager.sh"
   },
   "dependencies": {
-    "react-native": "^0.8.0",
-    "react-native-search-bar": "^1.0.0"
+    "react-native": "^0.10.1",
+    "react-native-search-bar": "^2.1.0"
   }
 }
