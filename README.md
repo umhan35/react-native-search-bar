@@ -30,7 +30,7 @@ npm install react-native-search-bar@latest --save
 	/>
 ```
 
-For all supportted propertied, please check out `propTypes` in either [SearchBar.coffee](SearchBar.coffee) or [SearchBar.js](SearchBar.js).
+For all supportted properties, please check out `propTypes` in either [SearchBar.coffee](SearchBar.coffee) or [SearchBar.js](SearchBar.js).
 
 There is also an example project in the [SearchBarExample](SearchBarExample) directory.
 
