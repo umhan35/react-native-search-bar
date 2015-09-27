@@ -71,7 +71,6 @@ RCT_EXPORT_METHOD(focus:(nonnull NSNumber *)reactTag)
     [self.bridge.uiManager addUIBlock:
      ^(__unused RCTUIManager *uiManager, RCTSparseArray *viewRegistry){
          RNSearchBar *searchBar = viewRegistry[reactTag];
-         NSLog(@"%@", NSStringFromClass([searchBar class]));
          
          if ([searchBar isKindOfClass:[RNSearchBar class]]) {
              [searchBar becomeFirstResponder];
