@@ -23,11 +23,15 @@ npm install react-native-search-bar@latest --save
 
 ```JSX
 <SearchBar
+	ref="searchBar"
 	placeholder='Search'
 	onChangeText={...}
 	onSearchButtonPress={...}
 	onCancelButtonPress={...}
 	/>
+```
+```javascript
+this.ref.searchBar.focus()
 ```
 
 For all supportted properties, please check out `propTypes` in either [SearchBar.coffee](SearchBar.coffee) or [SearchBar.js](SearchBar.js).

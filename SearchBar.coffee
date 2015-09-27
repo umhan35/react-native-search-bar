@@ -34,7 +34,8 @@ SearchBar = React.createClass
       @props.onSearchButtonPress? e.nativeEvent.searchText
     else if button == 'cancel'
       @props.onCancelButtonPress?()
-
+  focus: ->
+    NativeModules.RNSearchBarManager.focus React.findNodeHandle(this)
   render: ->
     `<RNSearchBar
       style={{height: NativeModules.RNSearchBarManager.ComponentHeight}}
