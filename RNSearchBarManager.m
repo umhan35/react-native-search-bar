@@ -3,10 +3,20 @@
 #import "RNSearchBar.h"
 
 #import "RCTBridge.h"
+#import "RCTUIManager.h"
+#import "RCTSparseArray.h"
 
 @implementation RNSearchBarManager
 
 RCT_EXPORT_MODULE()
+
+@synthesize bridge = _bridge;
+
+- (dispatch_queue_t)methodQueue
+{
+    return _bridge.uiManager.methodQueue;
+}
+
 
 - (UIView *)view
 {
@@ -55,5 +65,20 @@ RCT_CUSTOM_VIEW_PROPERTY(textFieldBackgroundColor, UIColor, RNSearchBar)
            @"ComponentHeight": @([self view].intrinsicContentSize.height),
            };
 }
+
+RCT_EXPORT_METHOD(blur:(nonnull NSNumber *)reactTag)
+{
+    [self.bridge.uiManager addUIBlock:
+     ^(__unused RCTUIManager *uiManager, RCTSparseArray *viewRegistry){
+         RNSearchBar *searchBar = viewRegistry[reactTag];
+
+         if ([searchBar isKindOfClass:[RNSearchBar class]]) {
+             [searchBar endEditing:true];
+         } else {
+             RCTLogError(@"Cannot blur: %@ (tag #%@) is not RNSearchBar", searchBar, reactTag);
+         }
+     }];
+}
+
 
 @end
