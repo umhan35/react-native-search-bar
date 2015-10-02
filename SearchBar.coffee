@@ -19,6 +19,7 @@ SearchBar = React.createClass
     onChange: PropTypes.func
     onChangeText: PropTypes.func
     onFocus: PropTypes.func
+    onBlur: PropTypes.func
     onSearchButtonPress: PropTypes.func
     onCancelButtonPress: PropTypes.func
     hideBackground: PropTypes.bool
