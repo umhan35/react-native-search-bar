@@ -25,7 +25,7 @@
 
 - (void)searchBarTextDidBeginEditing:(UISearchBar *)searchBar
 {
-  [self setShowsCancelButton:YES animated:YES];
+  [self setShowsCancelButton:self.showsCancelButton animated:YES];
 
 
   [_eventDispatcher sendTextEventWithType:RCTTextEventTypeFocus
