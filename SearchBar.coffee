@@ -35,6 +35,9 @@ SearchBar = React.createClass
     else if button == 'cancel'
       @props.onCancelButtonPress?()
 
+  blur: ->
+    NativeModules.RNSearchBarManager.blur React.findNodeHandle(this)
+
   render: ->
     `<RNSearchBar
       style={{height: NativeModules.RNSearchBarManager.ComponentHeight}}
