@@ -22,6 +22,15 @@
   return self;
 }
 
+- (void) searchBarTextDidEndEditing:(UISearchBar *)searchBar
+{
+    [_eventDispatcher sendTextEventWithType:RCTTextEventTypeBlur
+                                   reactTag:self.reactTag
+                                       text:searchBar.text
+                                 eventCount:_nativeEventCount];
+    
+}
+
 
 - (void)searchBarTextDidBeginEditing:(UISearchBar *)searchBar
 {
