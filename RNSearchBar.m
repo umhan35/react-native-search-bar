@@ -13,6 +13,25 @@
   NSInteger _nativeEventCount;
 }
 
+NSString *cancelButtonText = nil;
+BOOL useCancelButton = NO;
+BOOL cancelButtonUsesAnimation = YES;
+
+- (void)setCancelButtonText:(NSString *)text
+{
+    cancelButtonText = text;
+}
+
+- (void)setUseCancelButton:(BOOL)state
+{
+    useCancelButton = state;
+}
+
+- (void)setCancelButtonUsesAnimation:(BOOL)state
+{
+    cancelButtonUsesAnimation = state;
+}
+
 - (instancetype)initWithEventDispatcher:(RCTEventDispatcher *)eventDispatcher
 {
   if ((self = [super initWithFrame:CGRectMake(0, 0, 1000, 44)])) {
@@ -34,7 +53,16 @@
 
 - (void)searchBarTextDidBeginEditing:(UISearchBar *)searchBar
 {
-  [self setShowsCancelButton:self.showsCancelButton animated:YES];
+  if (useCancelButton) {
+    [self setShowsCancelButton:YES animated:cancelButtonUsesAnimation];
+    if (cancelButtonText) {
+      for (UIView *subView in [[searchBar.subviews objectAtIndex:0] subviews]){
+        if([subView isKindOfClass:[UIButton class]]){
+          [(UIButton*)subView setTitle:cancelButtonText forState:UIControlStateNormal];
+        }
+      }
+    }
+  }
 
 
   [_eventDispatcher sendTextEventWithType:RCTTextEventTypeFocus
@@ -69,7 +97,7 @@
 {
   self.text = @"";
   [self resignFirstResponder];
-  [self setShowsCancelButton:NO animated:YES];
+  [self setShowsCancelButton:NO animated:cancelButtonUsesAnimation];
 
   NSDictionary *event = @{
                           @"target": self.reactTag,
