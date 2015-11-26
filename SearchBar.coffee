@@ -39,6 +39,9 @@ SearchBar = React.createClass
   blur: ->
     NativeModules.RNSearchBarManager.blur React.findNodeHandle(this)
 
+  focus: ->
+    NativeModules.RNSearchBarManager.focus React.findNodeHandle(this)
+
   render: ->
     `<RNSearchBar
       style={{height: NativeModules.RNSearchBarManager.ComponentHeight}}
