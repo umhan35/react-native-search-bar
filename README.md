@@ -23,7 +23,7 @@ npm install react-native-search-bar@latest --save
 
 ```JSX
 <SearchBar
-  ref='searchBar'
+	ref='searchBar'
 	placeholder='Search'
 	onChangeText={...}
 	onSearchButtonPress={...}
