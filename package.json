@@ -8,7 +8,7 @@
     "react-native",
     "ios"
   ],
-  "dependencies": {
+  "peerDependencies": {
     "react-native": "^0 || 0.16.0-rc"
   },
   "repository": {
