@@ -8,9 +8,6 @@
     "react-native",
     "ios"
   ],
-  "dependencies": {
-    "react-native": "^0"
-  },
   "repository": {
     "type": "git",
     "url": "https://github.com/umhan35/react-native-search-bar"
