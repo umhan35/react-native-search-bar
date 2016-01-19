@@ -28,7 +28,12 @@ RCT_EXPORT_VIEW_PROPERTY(placeholder, NSString)
 RCT_EXPORT_VIEW_PROPERTY(text, NSString)
 RCT_EXPORT_VIEW_PROPERTY(showsCancelButton, BOOL)
 RCT_EXPORT_VIEW_PROPERTY(barTintColor, UIColor)
-RCT_EXPORT_VIEW_PROPERTY(tintColor, UIColor)
+RCT_CUSTOM_VIEW_PROPERTY(tintColor, UIColor, RNSearchBar)
+{
+    view.tintColor = [RCTConvert UIColor:json];
+    UITextField *searchField = [view valueForKey:@"_searchField"];
+    searchField.textColor = [RCTConvert UIColor:json];
+}
 RCT_CUSTOM_VIEW_PROPERTY(hideBackground, BOOL, RNSearchBar)
 {
     if ([RCTConvert BOOL:json]) {
