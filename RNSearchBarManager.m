@@ -19,9 +19,10 @@ RCT_EXPORT_MODULE()
 
 - (UIView *)view
 {
-  RNSearchBar *searchBar = [[RNSearchBar alloc] initWithEventDispatcher:self.bridge.eventDispatcher];
-
-  return searchBar;
+    RNSearchBar *searchBar = [[RNSearchBar alloc] initWithEventDispatcher:self.bridge.eventDispatcher];
+    searchBar.searchTextPositionAdjustment = UIOffsetMake(5, 0);
+    
+    return searchBar;
 }
 
 RCT_EXPORT_VIEW_PROPERTY(placeholder, NSString)
