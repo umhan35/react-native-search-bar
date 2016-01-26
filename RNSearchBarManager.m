@@ -25,10 +25,24 @@ RCT_EXPORT_MODULE()
     return searchBar;
 }
 
-RCT_EXPORT_VIEW_PROPERTY(placeholder, NSString)
+UIColor *placeholderColor;
+
 RCT_EXPORT_VIEW_PROPERTY(text, NSString)
 RCT_EXPORT_VIEW_PROPERTY(showsCancelButton, BOOL)
 RCT_EXPORT_VIEW_PROPERTY(barTintColor, UIColor)
+RCT_CUSTOM_VIEW_PROPERTY(placeholder, NSString, RNSearchBar)
+{
+    UITextField *searchField = [view valueForKey:@"_searchField"];
+    
+    if (placeholderColor == nil) {
+        placeholderColor = [UIColor lightGrayColor];
+    }
+    searchField.attributedPlaceholder = [[NSAttributedString alloc] initWithString:[RCTConvert NSString:json] attributes:@{NSForegroundColorAttributeName: placeholderColor}];
+}
+RCT_CUSTOM_VIEW_PROPERTY(placeholderColor, UIColor, RNSearchBar)
+{
+    placeholderColor = [RCTConvert UIColor:json];
+}
 RCT_CUSTOM_VIEW_PROPERTY(tintColor, UIColor, RNSearchBar)
 {
     view.tintColor = [RCTConvert UIColor:json];
