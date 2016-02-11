@@ -22,6 +22,7 @@ SearchBar = React.createClass
     onBlur: PropTypes.func
     onSearchButtonPress: PropTypes.func
     onCancelButtonPress: PropTypes.func
+    enablesReturnKeyAutomatically: PropTypes.bool
     hideBackground: PropTypes.bool
 
   _onChange: (e) ->
