@@ -25,6 +25,12 @@ SearchBar = React.createClass
     onCancelButtonPress: PropTypes.func
     enablesReturnKeyAutomatically: PropTypes.bool
     hideBackground: PropTypes.bool
+    barStyle: PropTypes.oneOf ['default', 'black']
+    searchBarStyle: PropTypes.oneOf ['default', 'prominent', 'minimal']
+
+  getDefaultProps: ->
+    barStyle: 'default'
+    searchBarStyle: 'default'
 
   _onChange: (e) ->
     @props.onChange? e
