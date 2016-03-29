@@ -25,7 +25,7 @@ npm install react-native-search-bar@latest --save
 <SearchBar
 	ref='searchBar'
 	placeholder='Search'
-	onChangeText={...}
+	onChangeText={onSearchBarChangeText.bind(this)}
 	onSearchButtonPress={...}
 	onCancelButtonPress={...}
 	/>
@@ -33,6 +33,10 @@ npm install react-native-search-bar@latest --save
 
 ```javascript
 this.refs.searchBar.focus();
+
+function onSearchBarChangeText(searchText) {
+  /* Update ListView with filtered results. */
+}
 ```
 
 For all supportted properties, please check out `propTypes` in either [SearchBar.coffee](SearchBar.coffee) or [SearchBar.js](SearchBar.js).
