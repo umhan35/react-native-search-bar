@@ -58,6 +58,14 @@ RCT_CUSTOM_VIEW_PROPERTY(textFieldBackgroundColor, UIColor, RNSearchBar)
   }
 }
 
+//based on http://stackoverflow.com/questions/19048766/
+RCT_CUSTOM_VIEW_PROPERTY(textColor, UIColor, RNSearchBar)
+{
+    if([RCTConvert UIColor:json]) {
+       [[UITextField appearanceWhenContainedIn:[RNSearchBar class], nil] setDefaultTextAttributes:@{NSForegroundColorAttributeName:[RCTConvert UIColor:json]}];
+    }
+}
+
 - (NSDictionary *)constantsToExport
 {
   return @{
