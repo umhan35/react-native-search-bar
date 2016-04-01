@@ -21,6 +21,10 @@ npm install react-native-search-bar@latest --save
 
 ## Usage
 
+```javascript
+var SearchBar = require('react-native-search-bar');
+```
+
 ```JSX
 <SearchBar
 	ref='searchBar'
