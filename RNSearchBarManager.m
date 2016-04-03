@@ -5,6 +5,23 @@
 #import "RCTBridge.h"
 #import "RCTUIManager.h"
 
+@implementation RCTConvert (UIBarStyle)
+RCT_ENUM_CONVERTER(UIBarStyle, (@{
+                                  @"default": @(UIBarStyleDefault),
+                                  @"black": @(UIBarStyleBlack)
+                                  }),
+                   UIBarStyleDefault, integerValue)
+@end
+
+@implementation RCTConvert (UISearchBarStyle)
+RCT_ENUM_CONVERTER(UISearchBarStyle, (@{
+                                        @"default": @(UISearchBarStyleDefault),
+                                        @"prominent": @(UISearchBarStyleProminent),
+                                        @"minimal": @(UISearchBarStyleMinimal)
+                                        }),
+                   UISearchBarStyleDefault, integerValue)
+@end
+
 @implementation RNSearchBarManager
 
 RCT_EXPORT_MODULE()
@@ -30,6 +47,8 @@ RCT_EXPORT_VIEW_PROPERTY(showsCancelButton, BOOL)
 RCT_EXPORT_VIEW_PROPERTY(barTintColor, UIColor)
 RCT_EXPORT_VIEW_PROPERTY(tintColor, UIColor)
 RCT_EXPORT_VIEW_PROPERTY(enablesReturnKeyAutomatically, BOOL)
+RCT_EXPORT_VIEW_PROPERTY(barStyle, UIBarStyle)
+RCT_EXPORT_VIEW_PROPERTY(searchBarStyle, UISearchBarStyle)
 RCT_CUSTOM_VIEW_PROPERTY(hideBackground, BOOL, RNSearchBar)
 {
     if ([RCTConvert BOOL:json]) {
