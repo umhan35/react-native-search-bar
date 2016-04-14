@@ -29,7 +29,7 @@ var SearchBar = require('react-native-search-bar');
 <SearchBar
 	ref='searchBar'
 	placeholder='Search'
-	onChangeText={...}
+	onChangeText={onSearchBarChangeText.bind(this)}
 	onSearchButtonPress={...}
 	onCancelButtonPress={...}
 	/>
@@ -37,6 +37,10 @@ var SearchBar = require('react-native-search-bar');
 
 ```javascript
 this.refs.searchBar.focus();
+
+function onSearchBarChangeText(searchText) {
+  /* Update ListView with filtered results. */
+}
 ```
 
 For all supportted properties, please check out `propTypes` in either [SearchBar.coffee](SearchBar.coffee) or [SearchBar.js](SearchBar.js).
