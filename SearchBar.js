@@ -1,15 +1,11 @@
-var NativeModules, PropTypes, RNSearchBar, React, SearchBar;
+import React, { Component, PropTypes } from 'react';
+import { NativeModules, requireNativeComponent } from 'react-native';
 
-React = require('react-native');
+const RNSearchBar = requireNativeComponent('RNSearchBar', null);
 
-RNSearchBar = React.requireNativeComponent('RNSearchBar', null);
 
-PropTypes = React.PropTypes;
-
-NativeModules = React.NativeModules;
-
-SearchBar = React.createClass({
-  propTypes: {
+export default class SearchBar extends Component {
+  static propTypes = {
     placeholder: PropTypes.string,
     text: PropTypes.string,
     barTintColor: PropTypes.string,
@@ -27,21 +23,19 @@ SearchBar = React.createClass({
     hideBackground: PropTypes.bool,
     barStyle: PropTypes.oneOf(['default', 'black']),
     searchBarStyle: PropTypes.oneOf(['default', 'prominent', 'minimal'])
-  },
-  getDefaultProps: function() {
-    return {
-      barStyle: 'default',
-      searchBarStyle: 'default'
-    };
-  },
-  _onChange: function(e) {
+  };
+  static defaultProps = {
+    barStyle: 'default',
+    searchBarStyle: 'default'
+  };
+  _onChange(e) {
     var base, base1;
     if (typeof (base = this.props).onChange === "function") {
       base.onChange(e);
     }
     return typeof (base1 = this.props).onChangeText === "function" ? base1.onChangeText(e.nativeEvent.text) : void 0;
-  },
-  _onPress: function(e) {
+  }
+  _onPress(e) {
     var base, base1, button;
     button = e.nativeEvent.button;
     if (button === 'search') {
@@ -49,21 +43,19 @@ SearchBar = React.createClass({
     } else if (button === 'cancel') {
       return typeof (base1 = this.props).onCancelButtonPress === "function" ? base1.onCancelButtonPress() : void 0;
     }
-  },
-  blur: function() {
+  }
+  blur() {
     return NativeModules.RNSearchBarManager.blur(React.findNodeHandle(this));
-  },
-  focus: function() {
+  }
+  focus() {
     return NativeModules.RNSearchBarManager.focus(React.findNodeHandle(this));
-  },
-  render: function() {
+  }
+  render() {
     return <RNSearchBar
       style={{height: NativeModules.RNSearchBarManager.ComponentHeight}}
-      onChange={this._onChange}
-      onPress={this._onPress}
+      onChange={this._onChange.bind(this)}
+      onPress={this._onPress.bind(this)}
       {...this.props}
     />;
   }
-});
-
-module.exports = SearchBar;
+}
