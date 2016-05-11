@@ -1,5 +1,5 @@
-import React, { Component, PropTypes } from 'react';
-import { NativeModules, requireNativeComponent } from 'react-native';
+import { Component, PropTypes } from 'react';
+import React, { NativeModules, requireNativeComponent } from 'react-native';
 
 const RNSearchBar = requireNativeComponent('RNSearchBar', null);
 
