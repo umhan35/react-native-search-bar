@@ -1,12 +1,13 @@
-var NativeModules, PropTypes, RNSearchBar, React, SearchBar;
+var NativeModules, PropTypes, RNSearchBar, React, ReactNative, SearchBar;
 
-React = require('react-native');
+React = require('react');
+ReactNative = require('react-native');
 
-RNSearchBar = React.requireNativeComponent('RNSearchBar', null);
+RNSearchBar = ReactNative.requireNativeComponent('RNSearchBar', null);
 
 PropTypes = React.PropTypes;
 
-NativeModules = React.NativeModules;
+NativeModules = ReactNative.NativeModules;
 
 SearchBar = React.createClass({
   propTypes: {
@@ -51,10 +52,10 @@ SearchBar = React.createClass({
     }
   },
   blur: function() {
-    return NativeModules.RNSearchBarManager.blur(React.findNodeHandle(this));
+    return NativeModules.RNSearchBarManager.blur(ReactNative.findNodeHandle(this));
   },
   focus: function() {
-    return NativeModules.RNSearchBarManager.focus(React.findNodeHandle(this));
+    return NativeModules.RNSearchBarManager.focus(ReactNative.findNodeHandle(this));
   },
   render: function() {
     return <RNSearchBar

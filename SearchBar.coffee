@@ -1,10 +1,11 @@
-React = require 'react-native'
+React = require 'react'
+ReactNative = require 'react-native'
 
-RNSearchBar = React.requireNativeComponent 'RNSearchBar', null
+RNSearchBar = ReactNative.requireNativeComponent 'RNSearchBar', null
 
 PropTypes = React.PropTypes
 
-NativeModules = React.NativeModules
+NativeModules = ReactNative.NativeModules
 
 
 SearchBar = React.createClass
@@ -45,10 +46,10 @@ SearchBar = React.createClass
       @props.onCancelButtonPress?()
 
   blur: ->
-    NativeModules.RNSearchBarManager.blur React.findNodeHandle(this)
+    NativeModules.RNSearchBarManager.blur ReactNative.findNodeHandle(this)
 
   focus: ->
-    NativeModules.RNSearchBarManager.focus React.findNodeHandle(this)
+    NativeModules.RNSearchBarManager.focus ReactNative.findNodeHandle(this)
 
   render: ->
     `<RNSearchBar
