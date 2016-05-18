@@ -36,6 +36,7 @@ var SearchBar = require('react-native-search-bar');
 ```
 
 ```javascript
+// in componentDidMount
 this.refs.searchBar.focus();
 ```
 
