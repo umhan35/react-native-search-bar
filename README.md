@@ -4,6 +4,8 @@ The high-quality [iOS native search bar](https://developer.apple.com/library/ios
 
 <img src="SearchBar.png"/>
 
+:sunny: Battle-tested in [WeatherEh](http://weathereh.hanzhao.name/) app.
+
 ## Installation
 
 In your react native project, run `npm install react-native-search-bar --save`
