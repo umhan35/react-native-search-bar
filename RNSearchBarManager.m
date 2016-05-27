@@ -57,6 +57,21 @@ RCT_CUSTOM_VIEW_PROPERTY(hideBackground, BOOL, RNSearchBar)
     }
 }
 
+RCT_CUSTOM_VIEW_PROPERTY(cancelButtonText, NSString, RNSearchBar)
+{
+    [view setCancelButtonText:[RCTConvert NSString:json]];
+}
+
+RCT_CUSTOM_VIEW_PROPERTY(useCancelButton, BOOL, RNSearchBar)
+{
+    [view setUseCancelButton:[RCTConvert BOOL:json]];
+}
+
+RCT_CUSTOM_VIEW_PROPERTY(cancelButtonUsesAnimation, BOOL, RNSearchBar)
+{
+    [view setCancelButtonUsesAnimation:[RCTConvert BOOL:json]];
+}
+
 RCT_CUSTOM_VIEW_PROPERTY(textFieldBackgroundColor, UIColor, RNSearchBar)
 {
   if ([RCTConvert UIColor:json]) {
