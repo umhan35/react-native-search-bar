@@ -27,12 +27,14 @@ SearchBar = React.createClass({
     enablesReturnKeyAutomatically: PropTypes.bool,
     hideBackground: PropTypes.bool,
     barStyle: PropTypes.oneOf(['default', 'black']),
-    searchBarStyle: PropTypes.oneOf(['default', 'prominent', 'minimal'])
+    searchBarStyle: PropTypes.oneOf(['default', 'prominent', 'minimal']),
+    editable: PropTypes.bool
   },
   getDefaultProps: function() {
     return {
       barStyle: 'default',
-      searchBarStyle: 'default'
+      searchBarStyle: 'default',
+      editable: true
     };
   },
   _onChange: function(e) {
