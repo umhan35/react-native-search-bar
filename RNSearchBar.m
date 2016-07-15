@@ -18,7 +18,6 @@
   if ((self = [super initWithFrame:CGRectMake(0, 0, 1000, 44)])) {
     _eventDispatcher = eventDispatcher;
     self.delegate = self;
-    self.searchTextPositionAdjustment = UIOffsetMake(10, 0);
   }
   return self;
 }
