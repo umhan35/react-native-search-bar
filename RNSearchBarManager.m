@@ -132,5 +132,18 @@ RCT_EXPORT_METHOD(focus:(nonnull NSNumber *)reactTag)
      }];
 }
 
+RCT_EXPORT_METHOD(unFocus:(nonnull NSNumber *)reactTag)
+{
+  [self.bridge.uiManager addUIBlock:
+   ^(__unused RCTUIManager *uiManager, NSDictionary *viewRegistry){
+     RNSearchBar *searchBar = viewRegistry[reactTag];
+     
+     if ([searchBar isKindOfClass:[RNSearchBar class]]) {
+       [searchBar resignFirstResponder];
+     } else {
+       RCTLogError(@"Cannot unFocus: %@ (tag #%@) is not RNSearchBar", searchBar, reactTag);
+     }
+   }];
+}
 
 @end
