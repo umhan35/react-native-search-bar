@@ -91,6 +91,7 @@ RCT_CUSTOM_VIEW_PROPERTY(textFieldBackgroundColor, UIColor, RNSearchBar)
     UIGraphicsEndImageContext();
 
     [view setSearchFieldBackgroundImage:image forState:UIControlStateNormal];
+    [view setSearchTextPositionAdjustment:UIOffsetMake(8.0, 0.0)];
   }
 }
 
