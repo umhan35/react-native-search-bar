@@ -57,6 +57,17 @@ RCT_CUSTOM_VIEW_PROPERTY(hideBackground, BOOL, RNSearchBar)
     }
 }
 
+RCT_CUSTOM_VIEW_PROPERTY(editable, BOOL, RNSearchBar)
+{
+    if ([RCTConvert BOOL:json]) {
+        [view setUserInteractionEnabled: YES];
+        view.alpha = 1;
+    } else {
+        [view setUserInteractionEnabled: NO];
+        view.alpha = .75;
+    }
+}
+
 RCT_CUSTOM_VIEW_PROPERTY(textFieldBackgroundColor, UIColor, RNSearchBar)
 {
   if ([RCTConvert UIColor:json]) {
