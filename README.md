@@ -59,6 +59,8 @@ There is also an example project in the [SearchBarExample](SearchBarExample) dir
 For now, implemented are only some of the features of [UISearchBar](https://developer.apple.com/library/ios/documentation/UIKit/Reference/UISearchBar_Class/).
 Feel free to send a pull request. To get started, you can read the ["Native UI Components (iOS)"](http://facebook.github.io/react-native/docs/native-components-ios.html) guide on React Native website.
 
+Except code contribution, you are welcome to answer question asked in [Issues](https://github.com/umhan35/react-native-search-bar/issues).
+
 ## License
 
 MIT
