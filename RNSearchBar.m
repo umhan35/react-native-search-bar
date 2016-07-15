@@ -29,13 +29,13 @@
                                        text:searchBar.text
                                         key:nil
                                  eventCount:_nativeEventCount];
-    
+
 }
 
 
 - (void)searchBarTextDidBeginEditing:(UISearchBar *)searchBar
 {
-  [self setShowsCancelButton:self.showsCancelButton animated:YES];
+  [self setShowsCancelButton:self._jsShowsCancelButton animated:YES];
 
 
   [_eventDispatcher sendTextEventWithType:RCTTextEventTypeFocus
