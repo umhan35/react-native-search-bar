@@ -41,6 +41,7 @@ RCT_EXPORT_MODULE()
   return searchBar;
 }
 
+RCT_EXPORT_VIEW_PROPERTY(hideCancelButton, BOOL)
 RCT_EXPORT_VIEW_PROPERTY(placeholder, NSString)
 RCT_EXPORT_VIEW_PROPERTY(text, NSString)
 RCT_EXPORT_VIEW_PROPERTY(showsCancelButton, BOOL)
