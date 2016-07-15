@@ -39,9 +39,15 @@ var SearchBar = require('react-native-search-bar');
 	/>
 ```
 
+### Managing the keyboard
+* Show - `this.refs.searchBar.focus()`;
+* Hide - `this.refs.searchBar.blur();`
+* Example
+	* Show the keyboard when the view loads
 ```javascript
-// in componentDidMount
-this.refs.searchBar.focus();
+componentDidMount() {
+	this.refs.searchBar.focus();
+}
 ```
 
 For all supportted properties, please check out `propTypes` in either [SearchBar.coffee](SearchBar.coffee) or [SearchBar.js](SearchBar.js).
