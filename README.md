@@ -1,5 +1,7 @@
 # react-native-search-bar
 
+<a href="https://www.npmjs.com/package/react-native-search-bar"><img src="https://badge.fury.io/js/react-native-search-bar.svg" alt="" height="18"></a>
+
 The high-quality [iOS native search bar](https://developer.apple.com/library/ios/documentation/UserExperience/Conceptual/UIKitUICatalog/UISearchBar.html) for [react native](https://facebook.github.io/react-native/).
 
 <img src="SearchBar.png"/>
