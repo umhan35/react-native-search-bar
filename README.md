@@ -58,7 +58,7 @@ onSearchButtonPress={this.refs.searchBar.unFocus}
 ...
 ```
 
-For all supportted properties, please check out `propTypes` in [SearchBar.js](SearchBar.js).
+For all supportted properties, please check out `propTypes` in either [SearchBar.coffee](SearchBar.coffee) or [SearchBar.js](SearchBar.js).
 
 There is also an example project in the [SearchBarExample](SearchBarExample) directory.
 
