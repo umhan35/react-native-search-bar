@@ -26,9 +26,9 @@ SearchBar = React.createClass
     onCancelButtonPress: PropTypes.func
     enablesReturnKeyAutomatically: PropTypes.bool
     hideBackground: PropTypes.bool
-    disabled: PropTypes.bool
     barStyle: PropTypes.oneOf ['default', 'black']
     searchBarStyle: PropTypes.oneOf ['default', 'prominent', 'minimal']
+    editable: PropTypes.bool
 
   getDefaultProps: ->
     barStyle: 'default'
@@ -52,6 +52,9 @@ SearchBar = React.createClass
 
   focus: ->
     NativeModules.RNSearchBarManager.focus ReactNative.findNodeHandle(this)
+
+  unFocus: ->
+    NativeModules.RNSearchBarManager.unFocus(ReactNative.findNodeHandle(this))
 
   render: ->
     `<RNSearchBar

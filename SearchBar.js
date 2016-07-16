@@ -1,6 +1,7 @@
 var NativeModules, PropTypes, RNSearchBar, React, ReactNative, SearchBar;
 
 React = require('react');
+
 ReactNative = require('react-native');
 
 RNSearchBar = ReactNative.requireNativeComponent('RNSearchBar', null);
