@@ -40,17 +40,25 @@ var SearchBar = require('react-native-search-bar');
 ```
 
 ### Managing the keyboard
-* Show - `this.refs.searchBar.focus()`;
-* Hide - `this.refs.searchBar.blur();`
-* Example
-	* Show the keyboard when the view loads
+* Show - `this.refs.searchBar.focus();`
+* Hide
+  - `this.refs.searchBar.blur();` - uses the iOS `endEditing:true` method on the underlying `UISearchBar` view.
+  - `this.refs.searchBar.unFocus();` - calls `resignFirstResponder` on the `UITextField` used by the `UISearchBar`.
+* Examples
+ * Show the keyboard when the view loads:
 ```javascript
 componentDidMount() {
-	this.refs.searchBar.focus();
+  this.refs.searchBar.focus();
 }
 ```
+ * Hide the keyboard when the user searches:
+```javascript
+...
+onSearchButtonPress={this.refs.searchBar.unFocus}
+...
+```
 
-For all supportted properties, please check out `propTypes` in either [SearchBar.coffee](SearchBar.coffee) or [SearchBar.js](SearchBar.js).
+For all supportted properties, please check out `propTypes` in [SearchBar.js](SearchBar.js).
 
 There is also an example project in the [SearchBarExample](SearchBarExample) directory.
 
