@@ -1,11 +1,5 @@
-#import <UIKit/UIKit.h>
+#import <React/RCTViewManager.h>
 
-@class RCTEventDispatcher;
-
-@interface RNSearchBar : UISearchBar
-
-- (instancetype)initWithEventDispatcher:(RCTEventDispatcher *)eventDispatcher NS_DESIGNATED_INITIALIZER;
-
-@property(nonatomic) BOOL _jsShowsCancelButton;
+@interface RNSearchBarManager : RCTViewManager
 
 @end
