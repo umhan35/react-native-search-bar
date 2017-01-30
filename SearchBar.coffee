@@ -1,5 +1,6 @@
 React = require 'react'
 ReactNative = require 'react-native'
+TextInputState = require 'react-native/Libraries/Components/TextInput/TextInputState'
 
 RNSearchBar = ReactNative.requireNativeComponent 'RNSearchBar', null
 
@@ -47,6 +48,18 @@ SearchBar = React.createClass
     else if button == 'cancel'
       @props.onCancelButtonPress?()
 
+  _onFocus: () ->
+    handle = ReactNative.findNodeHandle(this)
+    TextInputState._currentlyFocusedID = handle
+    @props.onFocus? e.nativeEvent.text
+
+  _onBlur: () ->
+    TextInputState._currentlyFocusedID = null
+    @props.onBlur? e.nativeEvent.text
+
+  _setCurrentlyFocused: (viewID) ->
+    TextInputState._currentlyFocusedID = viewID
+
   blur: ->
     NativeModules.RNSearchBarManager.blur ReactNative.findNodeHandle(this)
 
@@ -62,6 +75,8 @@ SearchBar = React.createClass
       onChange={this._onChange}
       onPress={this._onPress}
       {...this.props}
+      onFocus={this._onFocus}
+      onBlur={this._onBlur}
     />`
 
 module.exports = SearchBar
