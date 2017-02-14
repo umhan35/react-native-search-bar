@@ -2,8 +2,8 @@
 
 #import "RNSearchBar.h"
 
-#import "RCTBridge.h"
-#import "RCTUIManager.h"
+#import <React/RCTBridge.h>
+#import <React/RCTUIManager.h>
 
 @implementation RCTConvert (UIBarStyle)
 RCT_ENUM_CONVERTER(UIBarStyle, (@{
