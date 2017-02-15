@@ -54,6 +54,7 @@ RCT_EXPORT_VIEW_PROPERTY(tintColor, UIColor)
 RCT_EXPORT_VIEW_PROPERTY(enablesReturnKeyAutomatically, BOOL)
 RCT_EXPORT_VIEW_PROPERTY(barStyle, UIBarStyle)
 RCT_EXPORT_VIEW_PROPERTY(searchBarStyle, UISearchBarStyle)
+RCT_EXPORT_VIEW_PROPERTY(keyboardType, UIKeyboardType)
 RCT_CUSTOM_VIEW_PROPERTY(hideBackground, BOOL, RNSearchBar)
 {
     if ([RCTConvert BOOL:json]) {
@@ -143,7 +144,7 @@ RCT_EXPORT_METHOD(unFocus:(nonnull NSNumber *)reactTag)
   [self.bridge.uiManager addUIBlock:
    ^(__unused RCTUIManager *uiManager, NSDictionary *viewRegistry){
      RNSearchBar *searchBar = viewRegistry[reactTag];
-     
+
      if ([searchBar isKindOfClass:[RNSearchBar class]]) {
        [searchBar resignFirstResponder];
      } else {

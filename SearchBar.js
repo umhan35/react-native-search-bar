@@ -29,7 +29,8 @@ SearchBar = React.createClass({
     hideBackground: PropTypes.bool,
     barStyle: PropTypes.oneOf(['default', 'black']),
     searchBarStyle: PropTypes.oneOf(['default', 'prominent', 'minimal']),
-    editable: PropTypes.bool
+    editable: PropTypes.bool,
+    keyboardType: PropTypes.string
   },
   getDefaultProps: function() {
     return {
