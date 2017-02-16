@@ -1,6 +1,6 @@
 #import "RNSearchBar.h"
 
-#import "UIView+React.h"
+#import <React/UIView+React.h>
 #import <React/RCTEventDispatcher.h>
 
 @interface RNSearchBar() <UISearchBarDelegate>
