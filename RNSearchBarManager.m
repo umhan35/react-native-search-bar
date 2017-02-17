@@ -55,6 +55,11 @@ RCT_EXPORT_VIEW_PROPERTY(enablesReturnKeyAutomatically, BOOL)
 RCT_EXPORT_VIEW_PROPERTY(barStyle, UIBarStyle)
 RCT_EXPORT_VIEW_PROPERTY(searchBarStyle, UISearchBarStyle)
 RCT_EXPORT_VIEW_PROPERTY(keyboardType, UIKeyboardType)
+RCT_EXPORT_VIEW_PROPERTY(keyboardAppearance, UIKeyboardAppearance)
+RCT_EXPORT_VIEW_PROPERTY(returnKeyType, UIReturnKeyType)
+RCT_REMAP_VIEW_PROPERTY(autoCapitalize, autocapitalizationType, UITextAutocapitalizationType)
+RCT_REMAP_VIEW_PROPERTY(autoCorrect, autocorrectionType, UITextAutocorrectionType)
+RCT_REMAP_VIEW_PROPERTY(spellCheck, spellCheckingType, UITextSpellCheckingType)
 RCT_CUSTOM_VIEW_PROPERTY(hideBackground, BOOL, RNSearchBar)
 {
     if ([RCTConvert BOOL:json]) {
@@ -73,13 +78,6 @@ RCT_CUSTOM_VIEW_PROPERTY(editable, BOOL, RNSearchBar)
         view.alpha = .75;
     }
 }
-
-RCT_CUSTOM_VIEW_PROPERTY(fontSize, CGFloat, RNSearchBar)
- {
-     if ([RCTConvert CGFloat:json]) {
-         [[UITextField appearanceWhenContainedIn:[UISearchBar class], nil] setDefaultTextAttributes: @{NSFontAttributeName: [UIFont systemFontOfSize:[RCTConvert CGFloat:json]]}];
-     }
- }
 
 RCT_CUSTOM_VIEW_PROPERTY(textFieldBackgroundColor, UIColor, RNSearchBar)
 {
