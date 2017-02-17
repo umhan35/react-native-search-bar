@@ -29,7 +29,46 @@ SearchBar = React.createClass
     barStyle: PropTypes.oneOf ['default', 'black']
     searchBarStyle: PropTypes.oneOf ['default', 'prominent', 'minimal']
     editable: PropTypes.bool
-    keyboardType: PropTypes.string
+    keyboardType: PropTypes.oneOf [
+      'default'
+      'email-address'
+      'numeric'
+      'phone-pad'
+      'ascii-capable'
+      'numbers-and-punctuation'
+      'url'
+      'number-pad'
+      'name-phone-pad'
+      'decimal-pad'
+      'twitter'
+      'web-search'
+    ]
+    keyboardAppearance: PropTypes.oneOf [
+      'default'
+      'light'
+      'dark'
+    ]
+    returnKeyType: PropTypes.oneOf [
+      'done'
+      'go'
+      'next'
+      'search'
+      'send'
+      'default'
+      'emergency-call'
+      'google'
+      'join'
+      'route'
+      'yahoo'
+    ]
+    autoCapitalize: PropTypes.oneOf [
+      'none'
+      'sentences'
+      'words'
+      'characters'
+    ]
+    autoCorrect: PropTypes.bool
+    spellCheck: PropTypes.bool
 
   getDefaultProps: ->
     barStyle: 'default'
