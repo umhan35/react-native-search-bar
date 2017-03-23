@@ -6,7 +6,7 @@ Pod::Spec.new do |s|
   s.version       = package["version"]
   s.source_files  = "**/*.{h,m}"
   s.platform      = :ios, "8.0"
-  s.authors       = { package["_npmUser"]["name"] => package["_npmUser"]["email"] }
+  s.authors       = { "umhan" => "" }
   s.license       = package["license"]
   s.summary       = package["description"]
   s.homepage      = package["homepage"]
