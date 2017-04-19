@@ -1,7 +1,7 @@
 {
-  "name": "react-native-search-bar-tst",
+  "name": "react-native-search-bar",
   "version": "3.0.0",
-  "description": "The native search bar for react native. Forked from react-native-search-bar",
+  "description": "The native search bar for react native.",
   "keywords": [
     "search-bar",
     "react-component",
@@ -10,9 +10,9 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/PhilipMortiboy/react-native-search-bar"
+    "url": "https://github.com/umhan35/react-native-search-bar"
   },
-  "homepage": "https://github.com/PhilipMortiboy/react-native-search-bar",
+  "homepage": "https://github.com/umhan35/react-native-search-bar",
   "main": "SearchBar.js",
   "license": "MIT"
 }
