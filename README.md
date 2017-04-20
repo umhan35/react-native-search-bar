@@ -58,7 +58,16 @@ onSearchButtonPress={this.refs.searchBar.unFocus}
 ...
 ```
 
-For all supportted properties, please check out `propTypes` in either [SearchBar.coffee](SearchBar.coffee) or [SearchBar.js](SearchBar.js).
+### Clearing the text input
+The text input will automatically clear when the user presses the cancel or clear button.
+
+You can also clear it programmatically
+
+```javascript
+this.refs.searchBar.clearText();
+```
+
+For all supported properties, please check out `propTypes` in either [SearchBar.coffee](SearchBar.coffee) or [SearchBar.js](SearchBar.js).
 
 There is also an example project in the [SearchBarExample](SearchBarExample) directory.
 

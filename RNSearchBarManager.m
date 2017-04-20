@@ -152,4 +152,18 @@ RCT_EXPORT_METHOD(unFocus:(nonnull NSNumber *)reactTag)
    }];
 }
 
+RCT_EXPORT_METHOD(clearText:(nonnull NSNumber *)reactTag)
+{
+    [self.bridge.uiManager addUIBlock:
+     ^(__unused RCTUIManager *uiManager, NSDictionary *viewRegistry){
+         RNSearchBar *searchBar = viewRegistry[reactTag];
+         
+         if ([searchBar isKindOfClass:[RNSearchBar class]]) {
+             [searchBar setText:@""];
+         } else {
+             RCTLogError(@"Cannot clear text: %@ (tag #%@) is not RNSearchBar", searchBar, reactTag);
+         }
+     }];
+}
+
 @end
