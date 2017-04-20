@@ -152,7 +152,7 @@ RCT_EXPORT_METHOD(unFocus:(nonnull NSNumber *)reactTag)
    }];
 }
 
-RCT_EXPORT_METHOD(resetText:(nonnull NSNumber *)reactTag)
+RCT_EXPORT_METHOD(clearText:(nonnull NSNumber *)reactTag)
 {
     [self.bridge.uiManager addUIBlock:
      ^(__unused RCTUIManager *uiManager, NSDictionary *viewRegistry){
@@ -161,7 +161,7 @@ RCT_EXPORT_METHOD(resetText:(nonnull NSNumber *)reactTag)
          if ([searchBar isKindOfClass:[RNSearchBar class]]) {
              [searchBar setText:@""];
          } else {
-             RCTLogError(@"Cannot reset text: %@ (tag #%@) is not RNSearchBar", searchBar, reactTag);
+             RCTLogError(@"Cannot clear text: %@ (tag #%@) is not RNSearchBar", searchBar, reactTag);
          }
      }];
 }

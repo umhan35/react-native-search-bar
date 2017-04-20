@@ -58,13 +58,13 @@ onSearchButtonPress={this.refs.searchBar.unFocus}
 ...
 ```
 
-### Reseting the search bar text
-The text in the search bar will automatically reset when the user presses the cancel or clear button.
+### Clearing the text input
+The text input will automatically clear when the user presses the cancel or clear button.
 
-You can also reset it programmatically
+You can also clear it programmatically
 
 ```javascript
-this.refs.searchBar.resetText();
+this.refs.searchBar.clearText();
 ```
 
 For all supported properties, please check out `propTypes` in either [SearchBar.coffee](SearchBar.coffee) or [SearchBar.js](SearchBar.js).

@@ -56,8 +56,8 @@ SearchBar = React.createClass
   unFocus: ->
     NativeModules.RNSearchBarManager.unFocus(ReactNative.findNodeHandle(this))
 
-  resetText: -> 
-    NativeModules.RNSearchBarManager.resetText(ReactNative.findNodeHandle(this))
+  clearText: -> 
+    NativeModules.RNSearchBarManager.clearText(ReactNative.findNodeHandle(this))
 
   render: ->
     `<RNSearchBar
