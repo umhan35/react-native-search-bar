@@ -10,7 +10,7 @@ The high-quality [iOS native search bar](https://developer.apple.com/library/ios
 
 ## Installation
 
-In your react native project, run `npm install react-native-search-bar --save`
+In your react native project, run `npm install react-native-search-bar --save` or `yarn add react-native-search-bar`
 
 To link this library, please follow the first two steps in the [Linking Libraries (iOS)](http://facebook.github.io/react-native/docs/linking-libraries-ios.html) guide on React Native website. The `.xcodeproj` file is in `node_modules/react-native-search-bar/`. In the end, you should have `RNSearchBar.xcodeproj` in the `Libaries` group on Xcode and `libRNSearchBar.a` in the `Link Binary With Libraries` section inside the `Build Phases` tab of your project target.
 
@@ -72,3 +72,5 @@ Except code contribution, you are welcome to answer question asked in [Issues](h
 ## License
 
 MIT
+
+
