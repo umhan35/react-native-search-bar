@@ -14,5 +14,8 @@
   },
   "homepage": "https://github.com/umhan35/react-native-search-bar",
   "main": "SearchBar.js",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "create-react-class": "^15.6.0"
+  }
 }
