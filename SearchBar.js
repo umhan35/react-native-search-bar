@@ -1,14 +1,8 @@
-var NativeModules, PropTypes, RNSearchBar, React, ReactNative, SearchBar;
-
-React = require('react');
-
-ReactNative = require('react-native');
-
-RNSearchBar = ReactNative.requireNativeComponent('RNSearchBar', null);
-
-PropTypes = React.PropTypes;
-
-NativeModules = ReactNative.NativeModules;
+import React from 'react'
+import PropTypes from 'prop-types'
+import ReactNative from 'react-native'
+const RNSearchBar = ReactNative.requireNativeComponent('RNSearchBar', null);
+const NativeModules = ReactNative.NativeModules;
 
 class SearchBar extends React.Component {
   static propTypes = {
