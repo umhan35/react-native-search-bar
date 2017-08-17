@@ -32,12 +32,10 @@ class SearchBar extends React.Component {
     spellCheck: PropTypes.bool
   }
 
-  getDefaultProps() {
-    return {
-      barStyle: 'default',
-      searchBarStyle: 'default',
-      editable: true
-    };
+  static defaultProps = {
+    barStyle: 'default',
+    searchBarStyle: 'default',
+    editable: true
   }
 
   _onChange = (e) => {
