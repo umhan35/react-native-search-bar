@@ -11,12 +11,10 @@ PropTypes = require('prop-types');
 NativeModules = ReactNative.NativeModules;
 
 class SearchBar extends React.Component {
-  getDefaultProps() {
-    return {
-      barStyle: 'default',
-      searchBarStyle: 'default',
-      editable: true,
-    };
+  static defaultProps = {
+    barStyle: 'default',
+    searchBarStyle: 'default',
+    editable: true,
   }
   _onChange(e) {
     var base, base1;
