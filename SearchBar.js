@@ -57,8 +57,8 @@ class SearchBar extends React.Component {
     return (
       <RNSearchBar
         style={{ height: NativeModules.RNSearchBarManager.ComponentHeight }}
-        onChange={this._onChange}
-        onPress={this._onPress}
+        onChange={this._onChange.bind(this)}
+        onPress={this._onPress.bind(this)}
         {...this.props}
       />
     );
