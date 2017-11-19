@@ -1,13 +1,14 @@
 React = require 'react'
 ReactNative = require 'react-native'
 PropTypes = require 'prop-types'
+createReactClass = require 'create-react-class'
 
 RNSearchBar = ReactNative.requireNativeComponent 'RNSearchBar', null
 
 NativeModules = ReactNative.NativeModules
 
 
-SearchBar = React.createClass
+SearchBar = createReactClass
 
   propTypes:
     placeholder: PropTypes.string
