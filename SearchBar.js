@@ -1,4 +1,4 @@
-var NativeModules, PropTypes, RNSearchBar, React, ReactNative, SearchBar;
+var NativeModules, PropTypes, RNSearchBar, React, ReactNative, SearchBar, createReactClass;
 
 React = require('react');
 
@@ -10,7 +10,9 @@ PropTypes = React.PropTypes;
 
 NativeModules = ReactNative.NativeModules;
 
-SearchBar = React.createClass({
+createReactClass = require('create-react-class');
+
+SearchBar = createReactClass({
   propTypes: {
     placeholder: PropTypes.string,
     text: PropTypes.string,
