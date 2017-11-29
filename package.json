@@ -16,6 +16,7 @@
   "main": "SearchBar.js",
   "license": "MIT",
   "dependencies": {
+    "prop-types": "^15.5.10",
     "create-react-class": "^15.6.0"
   }
 }
