@@ -1,16 +1,22 @@
-var NativeModules, PropTypes, RNSearchBar, React, ReactNative, SearchBar, createReactClass;
+var NativeModules,
+  PropTypes,
+  RNSearchBar,
+  React,
+  ReactNative,
+  SearchBar,
+  createReactClass;
 
-React = require('react');
+React = require("react");
 
-ReactNative = require('react-native');
+ReactNative = require("react-native");
 
-RNSearchBar = ReactNative.requireNativeComponent('RNSearchBar', null);
+RNSearchBar = ReactNative.requireNativeComponent("RNSearchBar", null);
 
-PropTypes = require('prop-types');
+PropTypes = require("prop-types");
 
 NativeModules = ReactNative.NativeModules;
 
-createReactClass = require('create-react-class');
+createReactClass = require("create-react-class");
 
 SearchBar = createReactClass({
   propTypes: {
@@ -29,14 +35,14 @@ SearchBar = createReactClass({
     onCancelButtonPress: PropTypes.func,
     enablesReturnKeyAutomatically: PropTypes.bool,
     hideBackground: PropTypes.bool,
-    barStyle: PropTypes.oneOf(['default', 'black']),
-    searchBarStyle: PropTypes.oneOf(['default', 'prominent', 'minimal']),
+    barStyle: PropTypes.oneOf(["default", "black"]),
+    searchBarStyle: PropTypes.oneOf(["default", "prominent", "minimal"]),
     editable: PropTypes.bool
   },
   getDefaultProps: function() {
     return {
-      barStyle: 'default',
-      searchBarStyle: 'default',
+      barStyle: "default",
+      searchBarStyle: "default",
       editable: true
     };
   },
@@ -45,33 +51,47 @@ SearchBar = createReactClass({
     if (typeof (base = this.props).onChange === "function") {
       base.onChange(e);
     }
-    return typeof (base1 = this.props).onChangeText === "function" ? base1.onChangeText(e.nativeEvent.text) : void 0;
+    return typeof (base1 = this.props).onChangeText === "function"
+      ? base1.onChangeText(e.nativeEvent.text)
+      : void 0;
   },
   _onPress: function(e) {
     var base, base1, button;
     button = e.nativeEvent.button;
-    if (button === 'search') {
-      return typeof (base = this.props).onSearchButtonPress === "function" ? base.onSearchButtonPress(e.nativeEvent.searchText) : void 0;
-    } else if (button === 'cancel') {
-      return typeof (base1 = this.props).onCancelButtonPress === "function" ? base1.onCancelButtonPress() : void 0;
+    if (button === "search") {
+      return typeof (base = this.props).onSearchButtonPress === "function"
+        ? base.onSearchButtonPress(e.nativeEvent.searchText)
+        : void 0;
+    } else if (button === "cancel") {
+      return typeof (base1 = this.props).onCancelButtonPress === "function"
+        ? base1.onCancelButtonPress()
+        : void 0;
     }
   },
   blur: function() {
-    return NativeModules.RNSearchBarManager.blur(ReactNative.findNodeHandle(this));
+    return NativeModules.RNSearchBarManager.blur(
+      ReactNative.findNodeHandle(this)
+    );
   },
   focus: function() {
-    return NativeModules.RNSearchBarManager.focus(ReactNative.findNodeHandle(this));
+    return NativeModules.RNSearchBarManager.focus(
+      ReactNative.findNodeHandle(this)
+    );
   },
   unFocus: function() {
-    return NativeModules.RNSearchBarManager.unFocus(ReactNative.findNodeHandle(this));
+    return NativeModules.RNSearchBarManager.unFocus(
+      ReactNative.findNodeHandle(this)
+    );
   },
   render: function() {
-    return <RNSearchBar
-      style={{height: NativeModules.RNSearchBarManager.ComponentHeight}}
-      onChange={this._onChange}
-      onPress={this._onPress}
-      {...this.props}
-    />;
+    return (
+      <RNSearchBar
+        style={{ height: NativeModules.RNSearchBarManager.ComponentHeight }}
+        onChange={this._onChange}
+        onPress={this._onPress}
+        {...this.props}
+      />
+    );
   }
 });
 
