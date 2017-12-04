@@ -27,9 +27,24 @@ class SearchBar extends React.PureComponent {
   }
 
   static defaultProps = {
+    text: '',
+    placeholder: 'Search',
     barStyle: 'default',
     searchBarStyle: 'default',
     editable: true,
+    showsCancelButton: false,
+    hideBackground: false,
+    enablesReturnKeyAutomatically: true,
+    textFieldBackgroundColor: null,
+    tintColor: null,
+    barTintColor: null,
+    textColor: null,
+    onChange: null,
+    onChangeText: null,
+    onFocus: null,
+    onBlur: null,
+    onSearchButtonPress: null,
+    onCancelButtonPress: null,
   }
 
   onChange = (e) => {
