@@ -1,0 +1,17 @@
+{
+  "parser": "babel-eslint",
+  "extends": "airbnb",
+  "plugins": ["react", "react-native", "jsx-a11y", "import"],
+  "rules": {
+    "semi": "off",
+    "no-underscore-dangle": "off",
+    "no-plusplus": "off",
+    "react/jsx-filename-extension": "off",
+    "no-unused-expressions": "off",
+    "no-alert": "off",
+    "no-debugger": "off"
+  },
+  "env": {
+    "browser": true
+  }
+}

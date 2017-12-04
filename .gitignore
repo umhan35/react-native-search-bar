@@ -63,3 +63,6 @@ proguard/
 
 # Log Files
 *.log
+
+# Visual Studio Code
+.vscode
