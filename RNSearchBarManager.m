@@ -103,6 +103,13 @@ RCT_CUSTOM_VIEW_PROPERTY(textColor, UIColor, RNSearchBar)
     }
 }
 
+RCT_CUSTOM_VIEW_PROPERTY(fontSize, CGFloat, RNSearchBar)
+{
+    if ([RCTConvert CGFloat:json]) {
+        [[UITextField appearanceWhenContainedIn:[UISearchBar class], nil] setDefaultTextAttributes: @{NSFontAttributeName: [UIFont systemFontOfSize:[RCTConvert CGFloat:json]]}];
+    }
+}
+
 - (NSDictionary *)constantsToExport
 {
   return @{
