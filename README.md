@@ -6,7 +6,7 @@ The high-quality [iOS native search bar](https://developer.apple.com/library/ios
 
 <img src="SearchBar.png"/>
 
-:sunny: Battle-tested in [WeatherEh](http://weathereh.hanzhao.name/) app.
+:sunny: Battle-tested in [WeatherEh](https://itunes.apple.com/us/app/id1112813447) app.
 
 ## Installation
 
