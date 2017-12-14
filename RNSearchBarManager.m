@@ -99,7 +99,39 @@ RCT_CUSTOM_VIEW_PROPERTY(textFieldBackgroundColor, UIColor, RNSearchBar)
 RCT_CUSTOM_VIEW_PROPERTY(textColor, UIColor, RNSearchBar)
 {
     if([RCTConvert UIColor:json]) {
-       [[UITextField appearanceWhenContainedIn:[RNSearchBar class], nil] setDefaultTextAttributes:@{NSForegroundColorAttributeName:[RCTConvert UIColor:json]}];
+       [[UITextField appearanceWhenContainedIn:[RNSearchBar class], nil] setDefaultTextAttributes:@{NSForegroundColorAttributeName:[RCTConvert UIColor:json], NSFontAttributeName: [UIFont fontWithName:@"Helvetica" size:15.0]}];
+    }
+}
+
+RCT_CUSTOM_VIEW_PROPERTY(placeholderTextColor, UIColor, RNSearchBar)
+{
+    if([RCTConvert UIColor:json]) {
+        NSDictionary *placeholderAttributes = @{
+                                                NSForegroundColorAttributeName: [RCTConvert UIColor:json],
+                                                };
+ 
+        NSAttributedString *attributedPlaceholder = [[NSAttributedString alloc] initWithString:view.placeholder
+                                                                                    attributes:placeholderAttributes];
+
+        [[UITextField appearanceWhenContainedIn:[RNSearchBar class], nil] setAttributedPlaceholder:attributedPlaceholder];
+        
+        NSArray *searchBarSubViews = [[view.subviews objectAtIndex:0] subviews];
+        for (UIView *view in searchBarSubViews) {
+            if([view isKindOfClass:[UITextField class]])
+            {
+                UITextField *textField = (UITextField*)view;
+                UIImageView *imgView = (UIImageView*)textField.leftView;
+                imgView.image = [imgView.image imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
+                imgView.tintColor = [RCTConvert UIColor:json];
+                
+                UIButton *btnClear = (UIButton*)[textField valueForKey:@"clearButton"];
+                [btnClear setImage:[btnClear.imageView.image imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate] forState:UIControlStateNormal];
+                btnClear.tintColor = [RCTConvert UIColor:json];
+                
+            }
+        }
+        [view reloadInputViews];
+        
     }
 }
 
