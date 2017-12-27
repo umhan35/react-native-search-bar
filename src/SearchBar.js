@@ -24,6 +24,7 @@ class SearchBar extends React.PureComponent {
     barStyle: PropTypes.oneOf(['default', 'black']),
     searchBarStyle: PropTypes.oneOf(['default', 'prominent', 'minimal']),
     editable: PropTypes.bool,
+    returnKeyType: PropTypes.string,
   }
 
   static defaultProps = {
@@ -39,6 +40,7 @@ class SearchBar extends React.PureComponent {
     tintColor: null,
     barTintColor: null,
     textColor: null,
+    returnKeyType: 'search',
     onChange: () => null,
     onChangeText: () => null,
     onFocus: () => null,
