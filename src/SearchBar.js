@@ -66,6 +66,10 @@ class SearchBar extends React.PureComponent {
     return NativeModules.RNSearchBarManager.focus(findNodeHandle(this))
   }
 
+  clearText() {
+    return NativeModules.RNSearchBarManager.clearText(findNodeHandle(this))
+  }
+
   unFocus() {
     return NativeModules.RNSearchBarManager.unFocus(findNodeHandle(this))
   }
