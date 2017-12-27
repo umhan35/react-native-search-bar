@@ -44,7 +44,7 @@ class SearchBar extends React.PureComponent {
     onFocus: null,
     onBlur: null,
     onSearchButtonPress: () => null,
-    onCancelButtonPress: null,
+    onCancelButtonPress: () => null,
   }
 
   onChange = (e) => {
@@ -54,14 +54,6 @@ class SearchBar extends React.PureComponent {
 
   onSearchButtonPress = (e) => {
     this.props.onSearchButtonPress(e.nativeEvent.searchText)
-  }
-
-  onPress = (e) => {
-    const { button } = e.nativeEvent
-
-    if (button === 'cancel') {
-      this.props.onCancelButtonPress && this.props.onCancelButtonPress()
-    }
   }
 
   blur() {
@@ -84,6 +76,7 @@ class SearchBar extends React.PureComponent {
         onChange={this.onChange}
         onPress={this.onPress}
         onSearchButtonPress={this.onSearchButtonPress}
+        onCancelButtonPress={this.props.onCancelButtonPress}
       />
     )
   }

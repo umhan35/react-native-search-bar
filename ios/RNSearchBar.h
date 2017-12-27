@@ -9,5 +9,6 @@
 
 @property(nonatomic) BOOL _jsShowsCancelButton;
 @property(nonatomic, copy) RCTBubblingEventBlock onSearchButtonPress;
+@property(nonatomic, copy) RCTBubblingEventBlock onCancelButtonPress;
 
 @end

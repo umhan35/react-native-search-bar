@@ -72,13 +72,7 @@
     [self resignFirstResponder];
     [self setShowsCancelButton:NO animated:YES];
     
-    NSDictionary *event = @{
-                            @"target": self.reactTag,
-                            @"button": @"cancel"
-                            };
-    
-    [_eventDispatcher sendInputEventWithName:@"press" body:event];
+    self.onCancelButtonPress(@{});
 }
-
 
 @end
