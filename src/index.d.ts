@@ -4,6 +4,7 @@
 // TypeScript Version: 2.6
 
 import * as React from 'react'
+import { ReturnKeyTypeIOS } from 'react-native'
 
 interface Props {
   /**
@@ -79,6 +80,13 @@ interface Props {
    * Default is true
    */
   editable?: boolean
+
+  /**
+   * Return key type for the keyboard
+   *
+   * Default is 'search'
+   */
+  returnKeyType?: ReturnKeyTypeIOS
 
   /**
    * Event fired when
