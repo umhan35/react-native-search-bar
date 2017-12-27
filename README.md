@@ -38,10 +38,10 @@
 In your react native project, run
 
 ```Bash
-// npm
+# npm
 npm install react-native-search-bar@latest --save
 
-// yarn
+# yarn
 yarn add react-native-search-bar@latest
 ```
 
