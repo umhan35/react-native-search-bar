@@ -123,4 +123,9 @@ interface Props {
   onCancelButtonPress?(): void
 }
 
-export default class SearchBar extends React.Component<Props> {}
+export default class SearchBar extends React.Component<Props> {
+  focus(): void
+  blur(): void
+  unFocus(): void
+  clearText(): void
+}
