@@ -1,49 +1,60 @@
-# react-native-search-bar
+<h2 align="center">React Native Search Bar</h2>
 
-<a href="https://www.npmjs.com/package/react-native-search-bar"><img src="https://badge.fury.io/js/react-native-search-bar.svg" alt="" height="18"></a>
+<p align="center">The high-quality
+ <a href="https://developer.apple.com/documentation/uikit/uisearchbar">native iOS search bar</a> for <a href="https://facebook.github.io/react-native/">react native.</a>
 
-The high-quality [iOS native search bar](https://developer.apple.com/documentation/uikit/uisearchbar) for [react native](https://facebook.github.io/react-native/).
+<p align="center">
+  <a href="https://www.npmjs.com/package/react-native-search-bar">
+    <img alt="npm version" src="https://img.shields.io/npm/v/react-native-search-bar.svg?style=flat-square">
+  </a>
+  <a href="https://www.npmjs.com/package/react-native-react-native-search-bar">
+    <img alt="npm downloads" src="https://img.shields.io/npm/dm/react-native-search-bar.svg?style=flat-square">
+  </a>
+   <a href="https://prettier.io">
+    <img alt="code style: prettier" src="https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square">
+  </a>
+</p>
 
-<img src=".github/SearchBar.png"/>
+<p align="center">
+  <img src="./.github/SearchBar.png"/>
+</p>
 
-:sunny: Battle-tested in [WeatherEh](https://itunes.apple.com/us/app/id1112813447) app.
+<br>
 
-## Installation
+## Getting Started
 
-In your react native project, run `npm install react-native-search-bar --save`
-or `yarn add react-native-search-bar`
+1. Installation
 
-To link this library, please follow the first two steps in the
-[Linking Libraries (iOS)](http://facebook.github.io/react-native/docs/linking-libraries-ios.html)
-guide on React Native website. The `.xcodeproj` file is in
-`node_modules/react-native-search-bar/`. In the end, you should have
-`RNSearchBar.xcodeproj` in the `Libaries` group on Xcode and `libRNSearchBar.a`
-in the `Link Binary With Libraries` section inside the `Build Phases` tab of
-your project target.
+   * Using npm: `npm install react-native-tableview --save`
+   * Using yarn: `yarn add react-native-tableview`
+
+2. Link
+   * Run `react-native link react-native-search-bar`
+   * If linking fails, follow the
+     [manual linking steps](http://facebook.github.io/react-native/docs/linking-libraries-ios.html#manual-linking)
 
 ## Update
 
 In your react native project, run
 
 ```Bash
-npm install react-native@latest --save # optional, just for the latest react-native
 npm install react-native-search-bar@latest --save
 ```
 
 ## Usage
 
 ```javascript
-var SearchBar = require('react-native-search-bar');
+import SearchBar from 'react-native-search-bar'
 ```
 
 ```JSX
 <SearchBar
-	ref='searchBar'
-	placeholder='Search'
-	onChangeText={...}
-	onSearchButtonPress={...}
-	onCancelButtonPress={...}
-	/>
+  ref='searchBar'
+  placeholder='Search'
+  onChangeText={...}
+  onSearchButtonPress={...}
+  onCancelButtonPress={...}
+/>
 ```
 
 ### Managing the keyboard
@@ -54,7 +65,9 @@ var SearchBar = require('react-native-search-bar');
     underlying `UISearchBar` view.
   * `this.refs.searchBar.unFocus();` - calls `resignFirstResponder` on the
     `UITextField` used by the `UISearchBar`.
-* Examples
+
+### Examples
+
 * Show the keyboard when the view loads:
 
 ```javascript
@@ -71,11 +84,10 @@ onSearchButtonPress={this.refs.searchBar.unFocus}
 ...
 ```
 
-For all supportted properties, please check out `propTypes` in either
-[SearchBar.coffee](SearchBar.coffee) or [SearchBar.js](SearchBar.js).
+For a full list of props check out
+[the typescript definitions file](./src/index.d.ts).
 
-There is also an example project in the [SearchBarExample](SearchBarExample)
-directory.
+There is also an example project in the [example](./example) directory.
 
 ## Contribution
 
