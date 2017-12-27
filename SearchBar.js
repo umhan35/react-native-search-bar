@@ -39,17 +39,17 @@ class SearchBar extends React.PureComponent {
     tintColor: null,
     barTintColor: null,
     textColor: null,
-    onChange: null,
-    onChangeText: null,
-    onFocus: null,
-    onBlur: null,
+    onChange: () => null,
+    onChangeText: () => null,
+    onFocus: () => null,
+    onBlur: () => null,
     onSearchButtonPress: () => null,
     onCancelButtonPress: () => null,
   }
 
   onChange = (e) => {
-    this.props.onChange && this.props.onChange(e)
-    this.props.onChangeText && this.props.onChangeText(e.nativeEvent.text)
+    this.props.onChange(e)
+    this.props.onChangeText(e.nativeEvent.text)
   }
 
   onSearchButtonPress = (e) => {
