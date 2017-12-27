@@ -43,7 +43,7 @@ class SearchBar extends React.PureComponent {
     onChangeText: null,
     onFocus: null,
     onBlur: null,
-    onSearchButtonPress: null,
+    onSearchButtonPress: () => null,
     onCancelButtonPress: null,
   }
 
@@ -52,12 +52,14 @@ class SearchBar extends React.PureComponent {
     this.props.onChangeText && this.props.onChangeText(e.nativeEvent.text)
   }
 
+  onSearchButtonPress = (e) => {
+    this.props.onSearchButtonPress(e.nativeEvent.searchText)
+  }
+
   onPress = (e) => {
     const { button } = e.nativeEvent
 
-    if (button === 'search') {
-      this.props.onSearchButtonPress && this.props.onSearchButtonPress(e.nativeEvent.searchText)
-    } else if (button === 'cancel') {
+    if (button === 'cancel') {
       this.props.onCancelButtonPress && this.props.onCancelButtonPress()
     }
   }
@@ -78,9 +80,10 @@ class SearchBar extends React.PureComponent {
     return (
       <RNSearchBar
         style={{ height: NativeModules.RNSearchBarManager.ComponentHeight }}
+        {...this.props}
         onChange={this.onChange}
         onPress={this.onPress}
-        {...this.props}
+        onSearchButtonPress={this.onSearchButtonPress}
       />
     )
   }

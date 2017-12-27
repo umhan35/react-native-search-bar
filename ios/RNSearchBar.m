@@ -58,13 +58,11 @@
 
 - (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar
 {
-    NSDictionary *event = @{
-                            @"target": self.reactTag,
-                            @"button": @"search",
-                            @"searchText": searchBar.text
-                            };
-    
-    [_eventDispatcher sendInputEventWithName:@"press" body:event];
+    self.onSearchButtonPress(@{
+                               @"target": self.reactTag,
+                               @"button": @"search",
+                               @"searchText": searchBar.text
+                               });
 }
 
 
