@@ -50,6 +50,7 @@ export default class App extends Component<{}, { search: string }> {
             showsCancelButton
             barStyle="black"
             onSearchButtonPress={() => this.search1.blur()}
+            onCancelButtonPress={() => this.setState({ search: '' })}
           />
 
           <Text style={styles.header}>Search Example</Text>
@@ -60,6 +61,7 @@ export default class App extends Component<{}, { search: string }> {
             onChangeText={search => this.setState({ search })}
             showsCancelButton
             onSearchButtonPress={() => this.search2.blur()}
+            onCancelButtonPress={() => this.setState({ search: '' })}
           />
 
           {items
