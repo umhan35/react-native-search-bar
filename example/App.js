@@ -56,6 +56,7 @@ export default class App extends Component<{}, { search: string }> {
           <SearchBar
             text={this.state.search}
             ref={ref => (this.search2 = ref)}
+            onChange={e => console.log(e.nativeEvent)}
             onChangeText={search => this.setState({ search })}
             showsCancelButton
             onSearchButtonPress={() => this.search2.blur()}

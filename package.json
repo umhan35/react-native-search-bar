@@ -8,7 +8,8 @@
     "url": "https://github.com/umhan35/react-native-search-bar"
   },
   "homepage": "https://github.com/umhan35/react-native-search-bar",
-  "main": "SearchBar.js",
+  "main": "src/index.js",
+  "types": "src/index.d.ts",
   "license": "MIT",
   "dependencies": {
     "prop-types": "^15.5.10"
