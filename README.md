@@ -25,8 +25,8 @@
 
 1. Installation
 
-   * Using npm: `npm install react-native-tableview --save`
-   * Using yarn: `yarn add react-native-tableview`
+   * Using npm: `npm install react-native-search-bar --save`
+   * Using yarn: `yarn add react-native-search-bar`
 
 2. Link
    * Run `react-native link react-native-search-bar`
