@@ -45,6 +45,7 @@ class SearchBar extends React.PureComponent {
     searchBarStyle: PropTypes.oneOf(['default', 'prominent', 'minimal']),
     editable: PropTypes.bool,
     returnKeyType: PropTypes.string,
+    showsCancelButtonWhileEditing: PropTypes.bool,
   }
 
   static defaultProps = {
@@ -66,6 +67,7 @@ class SearchBar extends React.PureComponent {
     autoCapitalize: 'sentences',
     autoCorrect: false,
     spellCheck: false,
+    showsCancelButtonWhileEditing: true,
     onChange: () => null,
     onChangeText: () => null,
     onFocus: () => null,
@@ -83,6 +85,31 @@ class SearchBar extends React.PureComponent {
     this.props.onSearchButtonPress(e.nativeEvent.searchText)
   }
 
+  onFocus = () => {
+    if (this.props.showsCancelButtonWhileEditing) {
+      NativeModules.RNSearchBarManager.toggleCancelButton(findNodeHandle(this), true)
+    }
+
+    this.props.onFocus()
+  }
+
+  onCancelButtonPress = () => {
+    if (this.props.showsCancelButtonWhileEditing) {
+      NativeModules.RNSearchBarManager.toggleCancelButton(findNodeHandle(this), false)
+    }
+
+    this.props.onChangeText('')
+    this.props.onCancelButtonPress()
+  }
+
+  onBlur = () => {
+    if (this.props.showsCancelButtonWhileEditing) {
+      NativeModules.RNSearchBarManager.toggleCancelButton(findNodeHandle(this), false)
+    }
+
+    this.props.onBlur()
+  }
+
   blur() {
     return NativeModules.RNSearchBarManager.blur(findNodeHandle(this))
   }
@@ -98,12 +125,6 @@ class SearchBar extends React.PureComponent {
   unFocus() {
     return NativeModules.RNSearchBarManager.unFocus(findNodeHandle(this))
   }
-  
-  componentDidUpdate (prevProps) {
-    if (prevProps.showsCancelButton !== this.props.showsCancelButton) {
-      NativeModules.RNSearchBarManager.toggleCancelButton(findNodeHandle(this), this.props.showsCancelButton);
-    }
-  }
 
   render() {
     return (
@@ -112,8 +133,10 @@ class SearchBar extends React.PureComponent {
         {...this.props}
         onChange={this.onChange}
         onPress={this.onPress}
+        onFocus={this.onFocus}
+        onBlur={this.onBlur}
         onSearchButtonPress={this.onSearchButtonPress}
-        onCancelButtonPress={this.props.onCancelButtonPress}
+        onCancelButtonPress={this.onCancelButtonPress}
       />
     )
   }
