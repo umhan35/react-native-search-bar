@@ -110,6 +110,13 @@ interface Props {
   autoCapitalize?: 'none' | 'sentences' | 'words' | 'characters'
 
   /**
+   * If autoCorrect is enabled
+   * 
+   * Default is false
+   */
+  autoCorrect?: boolean
+
+  /**
    * Event fired when
    */
   onChange?(event: { target: number; text: string; eventCount: number }): void
