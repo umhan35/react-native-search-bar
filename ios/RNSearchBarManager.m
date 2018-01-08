@@ -52,8 +52,8 @@ RCT_EXPORT_VIEW_PROPERTY(placeholder, NSString)
 RCT_EXPORT_VIEW_PROPERTY(text, NSString)
 RCT_CUSTOM_VIEW_PROPERTY(showsCancelButton, BOOL, RNSearchBar)
 {
-  BOOL value = [RCTConvert BOOL:json];
-  view.showsCancelButton = value;
+    BOOL value = [RCTConvert BOOL:json];
+    view.showsCancelButton = value;
 }
 RCT_EXPORT_VIEW_PROPERTY(barTintColor, UIColor)
 RCT_EXPORT_VIEW_PROPERTY(tintColor, UIColor)
