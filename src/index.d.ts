@@ -96,6 +96,13 @@ interface Props {
   keyboardType?: KeyboardType | KeyboardTypeIOS
 
   /**
+   * The appearance of the keyboard
+   * 
+   * Default is 'default'
+   */
+  keyboardAppearance?: 'default' | 'dark' | 'light'
+
+  /**
    * Event fired when
    */
   onChange?(event: { target: number; text: string; eventCount: number }): void
