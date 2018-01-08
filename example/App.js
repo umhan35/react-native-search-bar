@@ -47,10 +47,8 @@ export default class App extends Component<{}, { search: string }> {
           <Text style={styles.header}>Dark Style</Text>
           <SearchBar
             ref={ref => (this.search1 = ref)}
-            showsCancelButton
             barStyle="black"
             onSearchButtonPress={() => this.search1.blur()}
-            onCancelButtonPress={() => this.setState({ search: '' })}
           />
 
           <Text style={styles.header}>Search Example</Text>
@@ -59,9 +57,7 @@ export default class App extends Component<{}, { search: string }> {
             ref={ref => (this.search2 = ref)}
             onChange={e => console.log(e.nativeEvent)}
             onChangeText={search => this.setState({ search })}
-            showsCancelButton
             onSearchButtonPress={() => this.search2.blur()}
-            onCancelButtonPress={() => this.setState({ search: '' })}
           />
 
           {items
