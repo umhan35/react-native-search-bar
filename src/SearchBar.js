@@ -98,6 +98,12 @@ class SearchBar extends React.PureComponent {
   unFocus() {
     return NativeModules.RNSearchBarManager.unFocus(findNodeHandle(this))
   }
+  
+  componentDidUpdate (prevProps) {
+    if (prevProps.showsCancelButton !== this.props.showsCancelButton) {
+      NativeModules.RNSearchBarManager.toggleCancelButton(findNodeHandle(this), this.props.showsCancelButton);
+    }
+  }
 
   render() {
     return (
