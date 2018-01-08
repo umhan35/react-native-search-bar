@@ -47,6 +47,13 @@ interface Props {
   showsCancelButton?: boolean
 
   /**
+   * Only shows the cancel button while the search bar has focus
+   * 
+   * Default is true
+   */
+  showsCancelButtonWhileEditing?: boolean
+
+  /**
    * Indicates whether the Return key is automatically enabled when the user is entering text.
    *
    * Default is true
