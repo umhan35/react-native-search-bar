@@ -103,6 +103,13 @@ interface Props {
   keyboardAppearance?: 'default' | 'dark' | 'light'
 
   /**
+   * The auto-capitalization behavior
+   * 
+   * Default is 'sentences'
+   */
+  autoCapitalize?: 'none' | 'sentences' | 'words' | 'characters'
+
+  /**
    * Event fired when
    */
   onChange?(event: { target: number; text: string; eventCount: number }): void
