@@ -60,6 +60,12 @@ RCT_EXPORT_VIEW_PROPERTY(barTintColor, UIColor)
 RCT_EXPORT_VIEW_PROPERTY(tintColor, UIColor)
 RCT_EXPORT_VIEW_PROPERTY(enablesReturnKeyAutomatically, BOOL)
 RCT_EXPORT_VIEW_PROPERTY(barStyle, UIBarStyle)
+RCT_EXPORT_VIEW_PROPERTY(returnKeyType, UIReturnKeyType)
+RCT_EXPORT_VIEW_PROPERTY(keyboardType, UIKeyboardType)
+RCT_EXPORT_VIEW_PROPERTY(keyboardAppearance, UIKeyboardAppearance)
+RCT_REMAP_VIEW_PROPERTY(autoCapitalize, autocapitalizationType, UITextAutocapitalizationType)
+RCT_REMAP_VIEW_PROPERTY(autoCorrect, autocorrectionType, UITextAutocorrectionType)
+RCT_REMAP_VIEW_PROPERTY(spellCheck, spellCheckingType, UITextSpellCheckingType)
 RCT_EXPORT_VIEW_PROPERTY(searchBarStyle, UISearchBarStyle)
 RCT_CUSTOM_VIEW_PROPERTY(hideBackground, BOOL, RNSearchBar)
 {
@@ -155,6 +161,20 @@ RCT_EXPORT_METHOD(unFocus:(nonnull NSNumber *)reactTag)
              [searchBar resignFirstResponder];
          } else {
              RCTLogError(@"Cannot unFocus: %@ (tag #%@) is not RNSearchBar", searchBar, reactTag);
+         }
+     }];
+}
+
+RCT_EXPORT_METHOD(clearText:(nonnull NSNumber *)reactTag)
+{
+    [self.bridge.uiManager addUIBlock:
+     ^(__unused RCTUIManager *uiManager, NSDictionary *viewRegistry){
+         RNSearchBar *searchBar = viewRegistry[reactTag];
+         
+         if ([searchBar isKindOfClass:[RNSearchBar class]]) {
+             [searchBar setText:@""];
+         } else {
+             RCTLogError(@"Cannot clear text: %@ (tag #%@) is not RNSearchBar", searchBar, reactTag);
          }
      }];
 }

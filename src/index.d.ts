@@ -4,6 +4,7 @@
 // TypeScript Version: 2.6
 
 import * as React from 'react'
+import { ReturnKeyTypeIOS, KeyboardType, KeyboardTypeIOS } from 'react-native'
 
 interface Props {
   /**
@@ -81,6 +82,48 @@ interface Props {
   editable?: boolean
 
   /**
+   * Return key type for the keyboard
+   *
+   * Default is 'search'
+   */
+  returnKeyType?: ReturnKeyTypeIOS
+
+  /**
+   * The type of keyboard to display
+   * 
+   * Default is 'default'
+   */
+  keyboardType?: KeyboardType | KeyboardTypeIOS
+
+  /**
+   * The appearance of the keyboard
+   * 
+   * Default is 'default'
+   */
+  keyboardAppearance?: 'default' | 'dark' | 'light'
+
+  /**
+   * The auto-capitalization behavior
+   * 
+   * Default is 'sentences'
+   */
+  autoCapitalize?: 'none' | 'sentences' | 'words' | 'characters'
+
+  /**
+   * If autoCorrect is enabled
+   * 
+   * Default is false
+   */
+  autoCorrect?: boolean
+
+  /**
+   * If red underline is shown for misspelt words
+   * 
+   * Default is false
+   */
+  spellCheck?: boolean
+
+  /**
    * Event fired when
    */
   onChange?(event: { target: number; text: string; eventCount: number }): void
@@ -115,4 +158,9 @@ interface Props {
   onCancelButtonPress?(): void
 }
 
-export default class SearchBar extends React.Component<Props> {}
+export default class SearchBar extends React.Component<Props> {
+  focus(): void
+  blur(): void
+  unFocus(): void
+  clearText(): void
+}

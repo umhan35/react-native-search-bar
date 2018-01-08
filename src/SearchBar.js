@@ -21,9 +21,30 @@ class SearchBar extends React.PureComponent {
     onCancelButtonPress: PropTypes.func,
     enablesReturnKeyAutomatically: PropTypes.bool,
     hideBackground: PropTypes.bool,
+    keyboardType: PropTypes.oneOf([
+      // Cross-platform
+      'default',
+      'email-address',
+      'numeric',
+      'phone-pad',
+      // iOS-only
+      'ascii-capable',
+      'numbers-and-punctuation',
+      'url',
+      'number-pad',
+      'name-phone-pad',
+      'decimal-pad',
+      'twitter',
+      'web-search',
+    ]),
+    keyboardAppearance: PropTypes.oneOf(['default', 'light', 'dark']),
+    autoCapitalize: PropTypes.oneOf(['none', 'words', 'sentences', 'characters']),
+    autoCorrect: PropTypes.bool,
+    spellCheck: PropTypes.bool,
     barStyle: PropTypes.oneOf(['default', 'black']),
     searchBarStyle: PropTypes.oneOf(['default', 'prominent', 'minimal']),
     editable: PropTypes.bool,
+    returnKeyType: PropTypes.string,
   }
 
   static defaultProps = {
@@ -39,6 +60,12 @@ class SearchBar extends React.PureComponent {
     tintColor: null,
     barTintColor: null,
     textColor: null,
+    returnKeyType: 'search',
+    keyboardType: 'default',
+    keyboardAppearance: 'default',
+    autoCapitalize: 'sentences',
+    autoCorrect: false,
+    spellCheck: false,
     onChange: () => null,
     onChangeText: () => null,
     onFocus: () => null,
@@ -62,6 +89,10 @@ class SearchBar extends React.PureComponent {
 
   focus() {
     return NativeModules.RNSearchBarManager.focus(findNodeHandle(this))
+  }
+
+  clearText() {
+    return NativeModules.RNSearchBarManager.clearText(findNodeHandle(this))
   }
 
   unFocus() {
