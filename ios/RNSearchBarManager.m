@@ -61,6 +61,7 @@ RCT_EXPORT_VIEW_PROPERTY(tintColor, UIColor)
 RCT_EXPORT_VIEW_PROPERTY(enablesReturnKeyAutomatically, BOOL)
 RCT_EXPORT_VIEW_PROPERTY(barStyle, UIBarStyle)
 RCT_EXPORT_VIEW_PROPERTY(returnKeyType, UIReturnKeyType)
+RCT_EXPORT_VIEW_PROPERTY(keyboardType, UIKeyboardType)
 RCT_EXPORT_VIEW_PROPERTY(searchBarStyle, UISearchBarStyle)
 RCT_CUSTOM_VIEW_PROPERTY(hideBackground, BOOL, RNSearchBar)
 {
