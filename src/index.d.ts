@@ -117,6 +117,13 @@ interface Props {
   autoCorrect?: boolean
 
   /**
+   * If red underline is shown for misspelt words
+   * 
+   * Default is false
+   */
+  spellCheck?: boolean
+
+  /**
    * Event fired when
    */
   onChange?(event: { target: number; text: string; eventCount: number }): void

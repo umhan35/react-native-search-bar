@@ -65,6 +65,7 @@ RCT_EXPORT_VIEW_PROPERTY(keyboardType, UIKeyboardType)
 RCT_EXPORT_VIEW_PROPERTY(keyboardAppearance, UIKeyboardAppearance)
 RCT_REMAP_VIEW_PROPERTY(autoCapitalize, autocapitalizationType, UITextAutocapitalizationType)
 RCT_REMAP_VIEW_PROPERTY(autoCorrect, autocorrectionType, UITextAutocorrectionType)
+RCT_REMAP_VIEW_PROPERTY(spellCheck, spellCheckingType, UITextSpellCheckingType)
 RCT_EXPORT_VIEW_PROPERTY(searchBarStyle, UISearchBarStyle)
 RCT_CUSTOM_VIEW_PROPERTY(hideBackground, BOOL, RNSearchBar)
 {
