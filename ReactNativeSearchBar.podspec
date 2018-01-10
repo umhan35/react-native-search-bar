@@ -4,7 +4,7 @@ package = JSON.parse(File.read(File.join(__dir__, "package.json")))
 Pod::Spec.new do |s|
   s.name          = "ReactNativeSearchBar"
   s.version       = package["version"]
-  s.source_files  = "**/*.{h,m}"
+  s.source_files  = "ios/**/*.{h,m}"
   s.platform      = :ios, "8.0"
   s.authors       = { "umhan" => "" }
   s.license       = package["license"]
