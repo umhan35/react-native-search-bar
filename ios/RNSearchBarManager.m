@@ -74,6 +74,10 @@ RCT_CUSTOM_VIEW_PROPERTY(hideBackground, BOOL, RNSearchBar)
     }
 }
 
+RCT_CUSTOM_VIEW_PROPERTY(cancelButtonText, NSString, RNSearchBar) {
+    [view setValue:[RCTConvert NSString:json] forKey:@"_cancelButtonText"];
+}
+
 RCT_CUSTOM_VIEW_PROPERTY(editable, BOOL, RNSearchBar)
 {
     if ([RCTConvert BOOL:json]) {
