@@ -47,6 +47,13 @@ interface Props {
   showsCancelButton?: boolean
 
   /**
+   * String for the cancel button
+   * 
+   * Default is 'Cancel'
+   */
+  cancelButtonText?: string
+
+  /**
    * Only shows the cancel button while the search bar has focus
    * 
    * Default is true
