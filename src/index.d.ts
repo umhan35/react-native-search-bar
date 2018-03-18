@@ -4,7 +4,7 @@
 // TypeScript Version: 2.6
 
 import * as React from 'react'
-import { ReturnKeyTypeIOS, KeyboardType, KeyboardTypeIOS } from 'react-native'
+import { ReturnKeyTypeIOS, KeyboardType, KeyboardTypeIOS, ViewStyle } from 'react-native'
 
 interface Props {
   /**
@@ -141,6 +141,11 @@ interface Props {
    * Event fired when
    */
   onChange?(event: { target: number; text: string; eventCount: number }): void
+  
+  /**
+   * Searchbar style
+   */
+  style?: ViewStyle,
 
   /**
    * Event fired when the text in the input changes
