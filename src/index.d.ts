@@ -4,7 +4,7 @@
 // TypeScript Version: 2.6
 
 import * as React from 'react'
-import { ReturnKeyTypeIOS, KeyboardType, KeyboardTypeIOS, ViewStyle } from 'react-native'
+import { ReturnKeyType, ReturnKeyTypeIOS, KeyboardType, KeyboardTypeIOS, ViewStyle } from 'react-native'
 
 interface Props {
   /**
@@ -100,7 +100,7 @@ interface Props {
    *
    * Default is 'search'
    */
-  returnKeyType?: ReturnKeyTypeIOS
+  returnKeyType?: ReturnKeyType | ReturnKeyTypeIOS
 
   /**
    * The type of keyboard to display
