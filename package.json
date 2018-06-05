@@ -1,6 +1,6 @@
 {
   "name": "react-native-search-bar",
-  "version": "3.4.1",
+  "version": "3.4.2",
   "description": "The native search bar for react native.",
   "keywords": ["search-bar", "react-component", "react-native", "ios"],
   "repository": {
