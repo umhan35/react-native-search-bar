@@ -182,4 +182,5 @@ export default class SearchBar extends React.Component<Props> {
   blur(): void
   unFocus(): void
   clearText(): void
+  setText(): void
 }
