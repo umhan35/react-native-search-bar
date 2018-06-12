@@ -182,6 +182,20 @@ RCT_EXPORT_METHOD(clearText:(nonnull NSNumber *)reactTag)
      }];
 }
 
+RCT_EXPORT_METHOD(setText:(nonnull NSNumber *)reactTag text:(NSString *)text)
+{
+    [self.bridge.uiManager addUIBlock:
+     ^(__unused RCTUIManager *uiManager, NSDictionary *viewRegistry){
+         RNSearchBar *searchBar = viewRegistry[reactTag];
+
+         if ([searchBar isKindOfClass:[RNSearchBar class]]) {
+             [searchBar setText:text];
+         } else {
+             RCTLogError(@"Cannot set text: %@ (tag #%@) is not RNSearchBar", searchBar, reactTag);
+         }
+     }];
+}
+
 RCT_EXPORT_METHOD(toggleCancelButton:(nonnull NSNumber *)reactTag  flag:(BOOL *)flag)
 {
   [self.bridge.uiManager addUIBlock:
