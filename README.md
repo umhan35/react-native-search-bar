@@ -23,6 +23,8 @@
 
 ## Getting Started
 
+This is a native library. It does not work with expo or create-react-native-app.
+
 1. Installation
 
    * Using npm: `npm install react-native-search-bar --save`
