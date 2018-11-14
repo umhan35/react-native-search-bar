@@ -25,15 +25,37 @@
 
 This is a native library. It does not work with expo or create-react-native-app.
 
-1. Installation
+### Installation
 
-   * Using npm: `npm install react-native-search-bar --save`
-   * Using yarn: `yarn add react-native-search-bar`
+```Bash
+# npm
+npm i react-native-search-bar --save
 
-2. Link
-   * Run `react-native link react-native-search-bar`
-   * If linking fails, follow the
-     [manual linking steps](http://facebook.github.io/react-native/docs/linking-libraries-ios.html#manual-linking)
+# yarn
+yarn add react-native-search-bar
+```
+
+### Link
+#### Option 1:
+
+Run 
+```Bash
+react-native link react-native-search-bar
+```
+
+If linking fails, follow the
+    [manual linking steps](http://facebook.github.io/react-native/docs/linking-libraries-ios.html#manual-linking)
+
+#### Option 2:
+
+Alternatively, you can use CocoaPods to manage your native (Objective-C and Swift) dependencies:
+1. Add `react-native-search-bar` to your Podfile:
+
+  ```
+  pod 'ReactNativeSearchBar', :path => '../node_modules/react-native-search-bar'
+  ```
+
+2. Run `pod install` on `ios` folder
 
 ## Update
 
