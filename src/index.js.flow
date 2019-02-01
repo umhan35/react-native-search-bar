@@ -1,0 +1,48 @@
+/**
+ * @flow strict
+ */
+
+import { PureComponent } from 'react';
+
+import type { ViewStyleProp } from 'StyleSheet';
+
+export type SearchBarProps = {
+  autoCapitalize?: 'none' | 'words' | 'sentences' | 'characters',
+  autoCorrect?: boolean,
+  barStyle?: 'default' | 'black',
+  barTintColor?: string,
+  cancelButtonText?: string,
+  editable?: boolean,
+  enablesReturnKeyAutomatically?: boolean,
+  hideBackground?: boolean,
+  keyboardAppearance?: 'default' | 'light' | 'dark',
+  keyboardType?: 'default' | 'email-address' | 'numeric' | 'phone-pad'
+    | 'ascii-capable' | 'numbers-and-punctuation' | 'url' | 'number-pad'
+    | 'name-phone-pad' | 'decimal-pad' | 'twitter' | 'web-search',
+  onBlur?: () => void,
+  onCancelButtonPress?: () => void,
+  onChange?: () => void,
+  onChangeText?: (text: string) => void,
+  onFocus?: () => void,
+  onSearchButtonPress?: (text: string) => void,
+  placeholder?: string,
+  returnKeyType?: 'done' | 'go' | 'next' | 'search' | 'send' | 'none'
+    | 'previous' | 'default' | 'emergency-call' | 'google' | 'join' | 'route'
+    | 'yahoo',
+  searchBarStyle?: 'default' | 'prominent' | 'minimal',
+  showsCancelButton?: boolean,
+  showsCancelButtonWhileEditing?: boolean,
+  spellCheck?: boolean,
+  style?: ViewStyleProp,
+  text?: string,
+  textColor?: string,
+  textFieldBackgroundColor?: string,
+  tintColor?: string
+};
+
+declare export default class SearchBar extends PureComponent<SearchBarProps> {
+  blur(): void;
+  clearText(): void;
+  focus(): void;
+  unFocus(): void;
+}
