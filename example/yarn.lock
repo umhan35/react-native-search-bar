@@ -4742,10 +4742,10 @@ react-is@^16.8.1, react-is@^16.8.4, react-is@^16.8.6:
   resolved "https://registry.yarnpkg.com/react-is/-/react-is-16.9.0.tgz#21ca9561399aad0ff1a7701c01683e8ca981edcb"
   integrity sha512-tJBzzzIgnnRfEm046qRcURvwQnZVXmuCbscxUO5RWrGTXpon2d4c8mI0D8WE6ydVIm29JiLB6+RslkIvym9Rjw==
 
-react-native-search-bar@^3.4.2:
-  version "3.4.2"
-  resolved "https://registry.yarnpkg.com/react-native-search-bar/-/react-native-search-bar-3.4.2.tgz#8606bb1d6b29a26dd5ee86cfae00f7253181736d"
-  integrity sha512-hchI0UBeKzNbPchJ4fXhl+o3fu4a9uQEmtRQrtf1lAqtTU3/WEtSHZ9Dz5Ix/ZalZQtiBcqlDVZTfIk3x7DbVw==
+react-native-search-bar@^3.4.3:
+  version "3.4.3"
+  resolved "https://registry.yarnpkg.com/react-native-search-bar/-/react-native-search-bar-3.4.3.tgz#0a772baba1ee66c54c55b7c1a278ae3fd4b13ab7"
+  integrity sha512-zBUU+atLC0bhc2SrezHuivQndfwKp/iJq3QbLDItI3nl/5AZCvS/7CzPke7gWrH7lhgn6kaBdouPH34lZtfQYQ==
   dependencies:
     prop-types "^15.5.10"
 
