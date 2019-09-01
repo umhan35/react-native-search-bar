@@ -1,8 +1,12 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-import { NativeModules, requireNativeComponent, findNodeHandle } from 'react-native'
+import React from 'react';
+import PropTypes from 'prop-types';
+import {
+  NativeModules,
+  requireNativeComponent,
+  findNodeHandle,
+} from 'react-native';
 
-const RNSearchBar = requireNativeComponent('RNSearchBar', null)
+const RNSearchBar = requireNativeComponent('RNSearchBar', null);
 
 class SearchBar extends React.PureComponent {
   static propTypes = {
@@ -39,7 +43,12 @@ class SearchBar extends React.PureComponent {
       'web-search',
     ]),
     keyboardAppearance: PropTypes.oneOf(['default', 'light', 'dark']),
-    autoCapitalize: PropTypes.oneOf(['none', 'words', 'sentences', 'characters']),
+    autoCapitalize: PropTypes.oneOf([
+      'none',
+      'words',
+      'sentences',
+      'characters',
+    ]),
     autoCorrect: PropTypes.bool,
     spellCheck: PropTypes.bool,
     barStyle: PropTypes.oneOf(['default', 'black']),
@@ -47,7 +56,7 @@ class SearchBar extends React.PureComponent {
     editable: PropTypes.bool,
     returnKeyType: PropTypes.string,
     showsCancelButtonWhileEditing: PropTypes.bool,
-  }
+  };
 
   static defaultProps = {
     text: '',
@@ -76,56 +85,65 @@ class SearchBar extends React.PureComponent {
     onBlur: () => null,
     onSearchButtonPress: () => null,
     onCancelButtonPress: () => null,
-  }
+  };
 
-  onChange = (e) => {
-    this.props.onChange(e)
-    this.props.onChangeText(e.nativeEvent.text)
-  }
+  onChange = e => {
+    this.props.onChange(e);
+    this.props.onChangeText(e.nativeEvent.text);
+  };
 
-  onSearchButtonPress = (e) => {
-    this.props.onSearchButtonPress(e.nativeEvent.searchText)
-  }
+  onSearchButtonPress = e => {
+    this.props.onSearchButtonPress(e.nativeEvent.searchText);
+  };
 
   onFocus = () => {
     if (this.props.showsCancelButtonWhileEditing) {
-      NativeModules.RNSearchBarManager.toggleCancelButton(findNodeHandle(this), true)
+      NativeModules.RNSearchBarManager.toggleCancelButton(
+        findNodeHandle(this),
+        true
+      );
     }
 
-    this.props.onFocus()
-  }
+    this.props.onFocus();
+  };
 
   onCancelButtonPress = () => {
     if (this.props.showsCancelButtonWhileEditing) {
-      NativeModules.RNSearchBarManager.toggleCancelButton(findNodeHandle(this), false)
+      NativeModules.RNSearchBarManager.toggleCancelButton(
+        findNodeHandle(this),
+        false
+      );
     }
 
-    this.props.onChangeText('')
-    this.props.onCancelButtonPress()
-  }
+    this.props.onChangeText('');
+    this.props.onCancelButtonPress();
+  };
 
   onBlur = () => {
     if (this.props.showsCancelButtonWhileEditing) {
-      NativeModules.RNSearchBarManager.toggleCancelButton(findNodeHandle(this), false)
+      NativeModules.RNSearchBarManager.toggleCancelButton(
+        findNodeHandle(this),
+        false
+      );
     }
 
-    this.props.onBlur()
-  }
+    this.props.onBlur();
+  };
 
   blur() {
-    return NativeModules.RNSearchBarManager.blur(findNodeHandle(this))
+    return NativeModules.RNSearchBarManager.blur(findNodeHandle(this));
   }
 
   focus() {
-    return NativeModules.RNSearchBarManager.focus(findNodeHandle(this))
+    return NativeModules.RNSearchBarManager.focus(findNodeHandle(this));
   }
 
   clearText() {
-    return NativeModules.RNSearchBarManager.clearText(findNodeHandle(this))
+    return NativeModules.RNSearchBarManager.clearText(findNodeHandle(this));
   }
 
   unFocus() {
-    return NativeModules.RNSearchBarManager.unFocus(findNodeHandle(this))
+    return NativeModules.RNSearchBarManager.unFocus(findNodeHandle(this));
   }
 
   render() {
@@ -140,8 +158,8 @@ class SearchBar extends React.PureComponent {
         onSearchButtonPress={this.onSearchButtonPress}
         onCancelButtonPress={this.onCancelButtonPress}
       />
-    )
+    );
   }
 }
 
-export default SearchBar
+export default SearchBar;

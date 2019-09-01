@@ -36,33 +36,24 @@ npm install react-native-search-bar --save
 yarn add react-native-search-bar
 ```
 
+### Pods
+
+> If using CocoaPods or React Native version >= 0.60.0
+
+```bash
+cd ios && pod install && cd ..
+```
+
 ### Linking
 
-#### Default Setup
-
-* Run `react-native link react-native-search-bar`
-* If linking fails, follow the
-  [manual linking steps](http://facebook.github.io/react-native/docs/linking-libraries-ios.html#manual-linking)
-
-#### Cocoapod Users
+> For React Native <= 0.59 only
 
 ```bash
 react-native link react-native-search-bar
-cd ios
-pod install
 ```
 
-## Update
-
-In your react native project, run
-
-```Bash
-# npm
-npm install react-native-search-bar@latest --save
-
-# yarn
-yarn add react-native-search-bar@latest
-```
+If linking fails, follow the
+[manual linking steps](http://facebook.github.io/react-native/docs/linking-libraries-ios.html#manual-linking)
 
 ## Usage
 
@@ -72,8 +63,8 @@ import SearchBar from 'react-native-search-bar'
 
 ```JSX
 <SearchBar
-  ref='searchBar'
-  placeholder='Search'
+  ref="searchBar"
+  placeholder="Search"
   onChangeText={...}
   onSearchButtonPress={...}
   onCancelButtonPress={...}

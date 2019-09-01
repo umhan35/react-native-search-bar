@@ -1,8 +1,13 @@
 {
   "name": "react-native-search-bar",
-  "version": "3.4.2",
+  "version": "3.4.3",
   "description": "The native search bar for react native.",
-  "keywords": ["search-bar", "react-component", "react-native", "ios"],
+  "keywords": [
+    "search-bar",
+    "react-component",
+    "react-native",
+    "ios"
+  ],
   "repository": {
     "type": "git",
     "url": "https://github.com/umhan35/react-native-search-bar"
@@ -11,6 +16,9 @@
   "main": "src/index.js",
   "types": "src/index.d.ts",
   "license": "MIT",
+  "scripts": {
+    "lint": "eslint --ext js,ts,tsx ."
+  },
   "dependencies": {
     "prop-types": "^15.5.10"
   },
@@ -19,16 +27,12 @@
     "react-native": ">=0.40"
   },
   "devDependencies": {
-    "babel-eslint": "^8.0.2",
-    "eslint": "^4.9.0",
-    "eslint-config-airbnb": "^16.1.0",
-    "eslint-plugin-import": "^2.7.0",
-    "eslint-plugin-jsx-a11y": "^6.0.2",
-    "eslint-plugin-react": "^7.4.0",
-    "eslint-plugin-react-native": "^3.1.0",
-    "prettier": "^1.8.2",
-    "prettier-eslint": "^8.2.1",
+    "@react-native-community/eslint-config": "^0.0.5",
+    "@types/react": "^16.9.2",
+    "@types/react-native": "^0.60.9",
+    "eslint": "^5.16.0",
     "react": "16.0.0",
-    "react-native": "^0.50.3"
+    "react-native": "^0.50.3",
+    "typescript": "^3.5.3"
   }
 }
