@@ -75,7 +75,11 @@ RCT_CUSTOM_VIEW_PROPERTY(hideBackground, BOOL, RNSearchBar)
 }
 
 RCT_CUSTOM_VIEW_PROPERTY(cancelButtonText, NSString, RNSearchBar) {
-    [view setValue:[RCTConvert NSString:json] forKey:@"_cancelButtonText"];
+    if (@available(iOS 9.0, *)) {
+        [[UIBarButtonItem appearanceWhenContainedInInstancesOfClasses:@[[UISearchBar class]]] setTitle:[RCTConvert NSString:json]];
+    } else {
+        [[UIBarButtonItem appearanceWhenContainedIn: [UISearchBar class], nil] setTitle:[RCTConvert NSString:json]];
+    }
 }
 
 RCT_CUSTOM_VIEW_PROPERTY(editable, BOOL, RNSearchBar)
