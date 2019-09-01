@@ -3,21 +3,22 @@
   "version": "0.0.1",
   "private": true,
   "scripts": {
-    "start": "node node_modules/react-native/local-cli/cli.js start",
+    "start": "react-native start",
     "test": "jest",
-    "postinstall":
-      "rm -rf node_modules/react-native-search-bar/node_modules node_modules/react-native-search-bar/example"
+    "lint": "eslint ."
   },
   "dependencies": {
-    "react": "16.0.0",
-    "react-native": "0.51.0",
-    "react-native-search-bar": "file:.."
+    "react": "16.8.6",
+    "react-native": "0.60.5",
+    "react-native-search-bar": "^3.4.2"
   },
   "devDependencies": {
-    "babel-jest": "22.0.4",
-    "babel-preset-react-native": "4.0.0",
-    "jest": "22.0.4",
-    "react-test-renderer": "16.0.0"
+    "@babel/core": "^7.5.5",
+    "@babel/runtime": "^7.5.5",
+    "babel-jest": "^24.9.0",
+    "jest": "^24.9.0",
+    "metro-react-native-babel-preset": "^0.56.0",
+    "react-test-renderer": "16.8.6"
   },
   "jest": {
     "preset": "react-native"
