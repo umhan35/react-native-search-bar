@@ -1,5 +1,6 @@
 package org.umhan35;
 
+import android.content.res.ColorStateList;
 import android.content.res.TypedArray;
 import android.graphics.Color;
 import android.text.InputType;
@@ -148,19 +149,19 @@ public class RNSearchBarManager extends SimpleViewManager<SearchView> {
 
     @ReactProp(name = "textColor", customType = "Color")
     public void setTextColor(SearchView searchView, @Nullable Integer color) {
-        int resolvedColor;
+        ColorStateList colorList;
         if (color == null) {
             final int[] attrs = {android.R.attr.textColorPrimary};
             final TypedArray a = searchView.getContext().obtainStyledAttributes(0, attrs);
-            resolvedColor = a.getColor(0, Color.BLACK);
+            colorList = a.getColorStateList(0);
             a.recycle();
         } else {
-            resolvedColor = color;
+            colorList = ColorStateList.valueOf(color);
         }
 
         processViewRecursive(searchView, view -> {
             if (view instanceof TextView) {
-                ((TextView) view).setTextColor(resolvedColor);
+                ((TextView) view).setTextColor(colorList);
             }
         });
     }
