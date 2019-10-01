@@ -1,5 +1,6 @@
 package org.umhan35;
 
+import android.content.res.TypedArray;
 import android.graphics.Color;
 import android.text.InputType;
 import android.view.View;
@@ -19,9 +20,11 @@ import com.facebook.react.uimanager.events.RCTEventEmitter;
 
 import java.util.Map;
 
+import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 
 public class RNSearchBarManager extends SimpleViewManager<SearchView> {
+    @Nonnull
     @Override
     public String getName() {
         return "RNSearchBar";
@@ -70,9 +73,7 @@ public class RNSearchBarManager extends SimpleViewManager<SearchView> {
 
     @ReactProp(name = "editable")
     public void setEditable(SearchView searchView, boolean editable) {
-        if (!editable) {
-            processViewRecursive(searchView, view -> view.setEnabled(false));
-        }
+        processViewRecursive(searchView, view -> view.setEnabled(editable));
     }
 
     @ReactProp(name = "keyboardType")
@@ -147,13 +148,21 @@ public class RNSearchBarManager extends SimpleViewManager<SearchView> {
 
     @ReactProp(name = "textColor", customType = "Color")
     public void setTextColor(SearchView searchView, @Nullable Integer color) {
-        if (color != null) {
-            processViewRecursive(searchView, view -> {
-                if (view instanceof TextView) {
-                    ((TextView) view).setTextColor(color);
-                }
-            });
+        int resolvedColor;
+        if (color == null) {
+            final int[] attrs = {android.R.attr.textColorPrimary};
+            final TypedArray a = searchView.getContext().obtainStyledAttributes(0, attrs);
+            resolvedColor = a.getColor(0, Color.BLACK);
+            a.recycle();
+        } else {
+            resolvedColor = color;
         }
+
+        processViewRecursive(searchView, view -> {
+            if (view instanceof TextView) {
+                ((TextView) view).setTextColor(resolvedColor);
+            }
+        });
     }
 
     @ReactProp(name = "textFieldBackgroundColor", customType = "Color")
@@ -165,8 +174,9 @@ public class RNSearchBarManager extends SimpleViewManager<SearchView> {
         }
     }
 
+    @Nonnull
     @Override
-    protected SearchView createViewInstance(ThemedReactContext reactContext) {
+    protected SearchView createViewInstance(@Nonnull ThemedReactContext reactContext) {
         SearchView searchView = new SearchView(reactContext);
         searchView.setIconifiedByDefault(false);
         searchView.setPaddingRelative(0, 5, 10, 5);
