@@ -1,7 +1,7 @@
 <h2 align="center">React Native Search Bar</h2>
 
 <p align="center">The high-quality
- <a href="https://developer.apple.com/documentation/uikit/uisearchbar">native iOS search bar</a> for <a href="https://facebook.github.io/react-native/">react native.</a>
+ <a href="https://developer.apple.com/documentation/uikit/uisearchbar">native search bar</a> for <a href="https://facebook.github.io/react-native/">react native.</a>
 
 <p align="center">
   <a href="https://www.npmjs.com/package/react-native-search-bar">
@@ -58,7 +58,7 @@ If linking fails, follow the
 ## Usage
 
 ```javascript
-import SearchBar from 'react-native-search-bar'
+import SearchBar from 'react-native-search-bar';
 ```
 
 ```JSX
@@ -73,16 +73,16 @@ import SearchBar from 'react-native-search-bar'
 
 ### Managing the keyboard
 
-* Show - `this.refs.searchBar.focus();`
-* Hide
-  * `this.refs.searchBar.blur();` - uses the iOS `endEditing:true` method on the
+- Show - `this.refs.searchBar.focus();`
+- Hide
+  - `this.refs.searchBar.blur();` - uses the iOS `endEditing:true` method on the
     underlying `UISearchBar` view.
-  * `this.refs.searchBar.unFocus();` - calls `resignFirstResponder` on the
+  - `this.refs.searchBar.unFocus();` - calls `resignFirstResponder` on the
     `UITextField` used by the `UISearchBar`.
 
 ### Examples
 
-* Show the keyboard when the view loads:
+- Show the keyboard when the view loads:
 
 ```javascript
 componentDidMount() {
@@ -90,7 +90,7 @@ componentDidMount() {
 }
 ```
 
-* Hide the keyboard when the user searches:
+- Hide the keyboard when the user searches:
 
 ```javascript
 ...
