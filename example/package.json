@@ -10,7 +10,7 @@
   "dependencies": {
     "react": "16.8.6",
     "react-native": "0.60.5",
-    "react-native-search-bar": "^3.4.3"
+    "react-native-search-bar": "^3.5.0"
   },
   "devDependencies": {
     "@babel/core": "^7.5.5",
