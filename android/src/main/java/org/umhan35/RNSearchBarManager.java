@@ -180,7 +180,8 @@ public class RNSearchBarManager extends SimpleViewManager<SearchView> {
     protected SearchView createViewInstance(@Nonnull ThemedReactContext reactContext) {
         SearchView searchView = new SearchView(reactContext);
         searchView.setIconifiedByDefault(false);
-        searchView.setPaddingRelative(0, 5, 10, 5);
+        int padding_start_in_dp = (int) (-16 * reactContext.getResources().getDisplayMetrics().density);
+        searchView.setPaddingRelative(padding_start_in_dp, 5, 10, 5);
 
         searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
             @Override
