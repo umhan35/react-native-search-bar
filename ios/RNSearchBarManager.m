@@ -124,16 +124,18 @@ RCT_CUSTOM_VIEW_PROPERTY(textColor, UIColor, RNSearchBar)
 }
 
 RCT_CUSTOM_VIEW_PROPERTY(appearance, NSString, RNSearchBar) {
-    #if defined(__IPHONE_OS_VERSION_MAX_ALLOWED) && defined(__IPHONE_13_0) &&      \
-        __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_13_0
-        if (@available(iOS 13.0, *)) {
-            if ([appearanceString isEqual:@"dark"]) {
-                [UIBarButtonItem setOverrideUserInterfaceStyle:UIUserInterfaceStyleDark];
-            } else if ([appearanceString isEqual:@"light"]) {
-                [UIBarButtonItem setOverrideUserInterfaceStyle:UIUserInterfaceStyleLight];
+    if ([RCTConvert NSString:json]) {
+        #if defined(__IPHONE_OS_VERSION_MAX_ALLOWED) && defined(__IPHONE_13_0) &&      \
+            __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_13_0
+            if (@available(iOS 13.0, *)) {
+                if ([[RCTConvert NSString:json] isEqual:@"dark"]) {
+                    [view setOverrideUserInterfaceStyle:UIUserInterfaceStyleDark];
+                } else if ([[RCTConvert NSString:json] isEqual:@"light"]) {
+                    [view setOverrideUserInterfaceStyle:UIUserInterfaceStyleLight];
+                }
             }
-        }
-    #endif
+        #endif
+    }
 }
 
 - (NSDictionary *)constantsToExport
