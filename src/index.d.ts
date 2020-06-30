@@ -140,6 +140,13 @@ interface Props {
   spellCheck?: boolean;
 
   /**
+   * (iOS 13+ only)
+   *
+   * Overrides the control's appearance irrespective of the OS theme
+   */
+  appearance?: 'dark' | 'light';
+
+  /**
    * Event fired when
    */
   onChange?(event: { target: number; text: string; eventCount: number }): void;

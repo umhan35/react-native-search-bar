@@ -51,6 +51,7 @@ class SearchBar extends React.PureComponent {
     ]),
     autoCorrect: PropTypes.bool,
     spellCheck: PropTypes.bool,
+    appearance: PropTypes.string,
     barStyle: PropTypes.oneOf(['default', 'black']),
     searchBarStyle: PropTypes.oneOf(['default', 'prominent', 'minimal']),
     editable: PropTypes.bool,
@@ -87,12 +88,12 @@ class SearchBar extends React.PureComponent {
     onCancelButtonPress: () => null,
   };
 
-  onChange = e => {
+  onChange = (e) => {
     this.props.onChange(e);
     this.props.onChangeText(e.nativeEvent.text);
   };
 
-  onSearchButtonPress = e => {
+  onSearchButtonPress = (e) => {
     this.props.onSearchButtonPress(e.nativeEvent.searchText);
   };
 
