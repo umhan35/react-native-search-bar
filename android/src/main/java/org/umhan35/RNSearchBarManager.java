@@ -147,10 +147,14 @@ public class RNSearchBarManager extends SimpleViewManager<SearchView> {
         searchView.setQuery(text, false);
     }
 
-    @ReactProp(name = "textColor", customType = "Color")
-    public void setTextColor(SearchView searchView, @Nullable Integer color) {
+    @ReactProp(name = "textColor", defaultInt = Color.TRANSPARENT, customType = "Color")
+    public void setTextColor(SearchView searchView, int color) {
         ColorStateList colorList;
-        if (color == null) {
+        if (color == Color.TRANSPARENT) {
+            // A recent version of RN started sending `0` instead if `null` if a color
+            // parameter is not supplied JS-side. This means it is no longer possible
+            // to use param `@Nullable Integer color` to detect defaults. So, assume that
+            // transparent text is never the goal, and treat that as `null`.
             final int[] attrs = {android.R.attr.textColorPrimary};
             final TypedArray a = searchView.getContext().obtainStyledAttributes(0, attrs);
             colorList = a.getColorStateList(0);
@@ -166,13 +170,9 @@ public class RNSearchBarManager extends SimpleViewManager<SearchView> {
         });
     }
 
-    @ReactProp(name = "textFieldBackgroundColor", customType = "Color")
-    public void setTextFieldBackgroundColor(SearchView searchView, @Nullable Integer color) {
-        if (color == null) {
-            searchView.setBackgroundColor(Color.WHITE);
-        } else {
-            searchView.setBackgroundColor(color);
-        }
+    @ReactProp(name = "textFieldBackgroundColor", defaultInt = Color.WHITE, customType = "Color")
+    public void setTextFieldBackgroundColor(SearchView searchView, int color) {
+        searchView.setBackgroundColor(color);
     }
 
     @Nonnull
