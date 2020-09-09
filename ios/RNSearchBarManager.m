@@ -130,6 +130,28 @@ RCT_CUSTOM_VIEW_PROPERTY(textColor, UIColor, RNSearchBar)
              };
 }
 
+RCT_CUSTOM_VIEW_PROPERTY(glassIconColor, UIColor, RNSearchBar)
+{
+    if([RCTConvert UIColor:json]) {
+        @try {
+            UITextField* textField = [view valueForKey: @"searchField"];
+            if (!textField) {
+                return;
+            }
+
+            UIView* glassIconView = textField.leftView;
+            if (!glassIconView) {
+                return;
+            }
+
+            glassIconView.tintColor = [RCTConvert UIColor:json];
+        }
+        @catch (NSException *exception) {
+           NSLog(@"%@", exception.reason);
+        }
+    }
+}
+
 RCT_EXPORT_METHOD(blur:(nonnull NSNumber *)reactTag)
 {
     [self.bridge.uiManager addUIBlock:
