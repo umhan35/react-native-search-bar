@@ -42,6 +42,11 @@ interface Props {
   textFieldBackgroundColor?: string;
 
   /**
+   * Search symbol color
+   */
+  symbolColor?: string;
+
+  /**
    * Toggles whether to show the cancel button or not
    *
    * Default is false
@@ -54,6 +59,11 @@ interface Props {
    * Default is 'Cancel'
    */
   cancelButtonText?: string;
+
+  /**
+   * Cancel button color
+   */
+  cancelButtonColor?: string;
 
   /**
    * Only shows the cancel button while the search bar has focus
