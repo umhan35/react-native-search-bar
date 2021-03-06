@@ -115,6 +115,27 @@ RCT_CUSTOM_VIEW_PROPERTY(textFieldBackgroundColor, UIColor, RNSearchBar)
     }
 }
 
+//borrowed from https://stackoverflow.com/questions/27014529/how-to-change-the-color-of-the-uisearchbar-icon
+RCT_CUSTOM_VIEW_PROPERTY(symbolColor, UIColor, RNSearchBar)
+{
+    if([RCTConvert UIColor:json]) {
+        if (@available(iOS 13.0, *)) {
+            view.searchTextField.leftView.tintColor = [RCTConvert UIColor:json];
+        }
+    }
+}
+
+RCT_CUSTOM_VIEW_PROPERTY(cancelButtonColor, UIColor, RNSearchBar)
+{
+    if([RCTConvert UIColor:json]) {
+        if (@available(iOS 13.0, *)) {
+            UIButton *clearButton = [view.searchTextField valueForKey:@"_clearButton"];
+            [clearButton setImage:[clearButton.imageView.image imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate] forState:UIControlStateNormal];
+            clearButton.tintColor = [RCTConvert UIColor:json];
+        }
+    }
+}
+
 //based on http://stackoverflow.com/questions/19048766/
 RCT_CUSTOM_VIEW_PROPERTY(textColor, UIColor, RNSearchBar)
 {

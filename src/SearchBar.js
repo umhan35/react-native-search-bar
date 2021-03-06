@@ -16,6 +16,8 @@ class SearchBar extends React.PureComponent {
     tintColor: PropTypes.string,
     textColor: PropTypes.string,
     textFieldBackgroundColor: PropTypes.string,
+    symbolColor: PropTypes.string,
+    cancelButtonColor: PropTypes.string,
     cancelButtonText: PropTypes.string,
     showsCancelButton: PropTypes.bool,
     onChange: PropTypes.func,
@@ -69,6 +71,8 @@ class SearchBar extends React.PureComponent {
     hideBackground: false,
     enablesReturnKeyAutomatically: true,
     textFieldBackgroundColor: null,
+    symbolColor: null,
+    cancelButtonColor: null,
     tintColor: null,
     barTintColor: null,
     textColor: null,
@@ -87,12 +91,12 @@ class SearchBar extends React.PureComponent {
     onCancelButtonPress: () => null,
   };
 
-  onChange = e => {
+  onChange = (e) => {
     this.props.onChange(e);
     this.props.onChangeText(e.nativeEvent.text);
   };
 
-  onSearchButtonPress = e => {
+  onSearchButtonPress = (e) => {
     this.props.onSearchButtonPress(e.nativeEvent.searchText);
   };
 

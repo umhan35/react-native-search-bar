@@ -166,6 +166,22 @@ public class RNSearchBarManager extends SimpleViewManager<SearchView> {
         });
     }
 
+    @ReactProp(name = "symbolColor", customType = "Color")
+    public void setSymbolColor(SearchView searchView, @Nullable Integer color) {
+        if (color != null) {
+            ImageView searchIcon = searchView.findViewById(androidx.appcompat.R.id.search_mag_icon);
+            searchIcon.setColorFilter(color, android.graphics.PorterDuff.Mode.SRC_IN);
+        }
+    }
+
+    @ReactProp(name = "cancelButtonColor", customType = "Color")
+    public void set(SearchView searchView, @Nullable Integer color) { 
+        if (color != null) {
+            ImageView searchClose = searchView.findViewById(androidx.appcompat.R.id.search_close_btn);
+            searchClose.setColorFilter(color, android.graphics.PorterDuff.Mode.SRC_IN);
+        }
+    }
+
     @ReactProp(name = "textFieldBackgroundColor", customType = "Color")
     public void setTextFieldBackgroundColor(SearchView searchView, @Nullable Integer color) {
         if (color == null) {
