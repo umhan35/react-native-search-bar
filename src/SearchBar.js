@@ -91,12 +91,12 @@ class SearchBar extends React.PureComponent {
     onCancelButtonPress: () => null,
   };
 
-  onChange = (e) => {
+  onChange = e => {
     this.props.onChange(e);
     this.props.onChangeText(e.nativeEvent.text);
   };
 
-  onSearchButtonPress = (e) => {
+  onSearchButtonPress = e => {
     this.props.onSearchButtonPress(e.nativeEvent.searchText);
   };
 
