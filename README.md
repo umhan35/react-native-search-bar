@@ -80,6 +80,24 @@ import SearchBar from 'react-native-search-bar';
   - `this.refs.searchBar.unFocus();` - calls `resignFirstResponder` on the
     `UITextField` used by the `UISearchBar`.
 
+### Adjusting the styles
+
+When using the SearchBar component, it is important to note that adding 
+dimensions (width, height) is necessary to ensure proper rendering. This is 
+because when the style prop is used, the default styles of the component will
+fallback. Without explicitly setting the dimensions, the component may not 
+render correctly. Therefore, be sure to include the width and height properties
+in your `style` property declaration to ensure that the SearchBar displays as 
+intended.
+
+```JSX
+<SearchBar
+  ref="searchbar"
+  style={{ width: 124, height: 40 }}
+  ...
+/>
+```
+
 ### Examples
 
 - Show the keyboard when the view loads:
